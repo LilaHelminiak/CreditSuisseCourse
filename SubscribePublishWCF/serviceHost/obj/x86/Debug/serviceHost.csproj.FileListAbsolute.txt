@@ -14,3 +14,5 @@ D:\Plugg\CS_CSharp\SubscribePublishWCF\serviceHost\bin\Debug\service.pdb
 D:\Plugg\CS_CSharp\SubscribePublishWCF\serviceHost\obj\x86\Debug\serviceHost.csprojResolveAssemblyReference.cache
 D:\Plugg\CS_CSharp\SubscribePublishWCF\serviceHost\obj\x86\Debug\serviceHost.exe
 D:\Plugg\CS_CSharp\SubscribePublishWCF\serviceHost\obj\x86\Debug\serviceHost.pdb
+D:\Plugg\CS_CSharp\SubscribePublishWCF\serviceHost\bin\Debug\Common.dll
+D:\Plugg\CS_CSharp\SubscribePublishWCF\serviceHost\bin\Debug\Common.pdb

@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "client", "client\client.csproj", "{F6D8FC2E-62D0-4554-AC3E-1964042590E3}"
 	ProjectSection(ProjectDependencies) = postProject
 		{73D6E51B-9EAB-4EBE-BAA3-794D636BD176} = {73D6E51B-9EAB-4EBE-BAA3-794D636BD176}
@@ -14,6 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datasource", "datasource\da
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serviceHost", "serviceHost\serviceHost.csproj", "{BAADF688-2449-4E66-B603-6B61C8237C4B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{40C1C6BC-F568-4CE4-AF90-5C84DAF7547B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{A1A4B040-519E-4A4F-8994-1CBB71530353}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,8 +68,21 @@ Global
 		{BAADF688-2449-4E66-B603-6B61C8237C4B}.Release|Mixed Platforms.Build.0 = Release|x86
 		{BAADF688-2449-4E66-B603-6B61C8237C4B}.Release|x86.ActiveCfg = Release|x86
 		{BAADF688-2449-4E66-B603-6B61C8237C4B}.Release|x86.Build.0 = Release|x86
+		{A1A4B040-519E-4A4F-8994-1CBB71530353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1A4B040-519E-4A4F-8994-1CBB71530353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1A4B040-519E-4A4F-8994-1CBB71530353}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A1A4B040-519E-4A4F-8994-1CBB71530353}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A1A4B040-519E-4A4F-8994-1CBB71530353}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A1A4B040-519E-4A4F-8994-1CBB71530353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1A4B040-519E-4A4F-8994-1CBB71530353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1A4B040-519E-4A4F-8994-1CBB71530353}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A1A4B040-519E-4A4F-8994-1CBB71530353}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A1A4B040-519E-4A4F-8994-1CBB71530353}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A1A4B040-519E-4A4F-8994-1CBB71530353} = {40C1C6BC-F568-4CE4-AF90-5C84DAF7547B}
 	EndGlobalSection
 EndGlobal

@@ -6,6 +6,7 @@
 using System;
 using System.ServiceModel;
 using System.Diagnostics;
+using Common;
 
 namespace Microsoft.ServiceModel.Samples
 {
@@ -19,29 +20,22 @@ namespace Microsoft.ServiceModel.Samples
         [OperationContract(IsOneWay = false, IsTerminating=true)]
         void Unsubscribe();
         [OperationContract(IsOneWay = true)]
-        void PublishPriceChange(string item, double price, double change);
+        void PublishPriceChange(MarketData newData);
     }
 
     public interface ISampleClientContract
     {
         [OperationContract(IsOneWay = true)]
-        void PriceChange(string item, double price, double change);
+        void PriceChange(MarketData newData);
     }
 
-
-    public class PriceChangeEventArgs : EventArgs
-    {
-        public string Item;
-        public double Price;
-        public double Change;
-    }
 
     // The Service implementation implements your service contract.
     [ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession)]
     public class SampleService : ISampleContract
     {
         public static event PriceChangeEventHandler PriceChangeEvent;
-        public delegate void PriceChangeEventHandler(object sender, PriceChangeEventArgs e);
+        public delegate void PriceChangeEventHandler(object sender, MarketData newData);
 
         ISampleClientContract callback = null;
 
@@ -68,21 +62,17 @@ namespace Microsoft.ServiceModel.Samples
         //Information source clients call this service operation to report a price change.
         //A price change event is raised. The price change event handlers for each subscriber will execute.
 
-        public void PublishPriceChange(string item, double price, double change)
+        public void PublishPriceChange(MarketData newData)
         {
-            PriceChangeEventArgs e = new PriceChangeEventArgs();
-            e.Item = item;
-            e.Price = price;
-            e.Change = change;
-            PriceChangeEvent(this, e);
+            PriceChangeEvent(this, newData);
         }
 
         //This event handler runs when a PriceChange event is raised.
         //The client's PriceChange service operation is invoked to provide notification about the price change.
 
-        public void PriceChangeHandler(object sender, PriceChangeEventArgs e)
+        public void PriceChangeHandler(object sender, MarketData newData)
         {
-            callback.PriceChange(e.Item, e.Price, e.Change);
+            callback.PriceChange(newData);
         }
 
     }

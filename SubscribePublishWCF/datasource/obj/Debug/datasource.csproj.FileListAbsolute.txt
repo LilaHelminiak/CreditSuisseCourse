@@ -7,6 +7,5 @@ D:\Plugg\charp\CS\datasource\obj\Debug\datasource.csprojResolveAssemblyReference
 D:\Plugg\CS_CSharp\SubscribePublishWCF\datasource\bin\datasource.exe.config
 D:\Plugg\CS_CSharp\SubscribePublishWCF\datasource\obj\Debug\datasource.exe
 D:\Plugg\CS_CSharp\SubscribePublishWCF\datasource\obj\Debug\datasource.pdb
-D:\Plugg\CS_CSharp\SubscribePublishWCF\datasource\obj\Debug\datasource.csprojResolveAssemblyReference.cache
 D:\Plugg\CS_CSharp\SubscribePublishWCF\datasource\bin\datasource.exe
 D:\Plugg\CS_CSharp\SubscribePublishWCF\datasource\bin\datasource.pdb

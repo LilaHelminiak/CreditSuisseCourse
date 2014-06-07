@@ -24,7 +24,11 @@ namespace Microsoft.ServiceModel.Samples
 
             //Subscribe.
             Console.WriteLine("Subscribing");
+            var marketData = new MarketData{ businessDate = DateTime.Now, StockPrice = 1000 };
             client.Subscribe();
+            //Console.Write("Publishing: ");
+            //Console.WriteLine("PriceChange(businessDate {0}, price {1})", marketData.businessDate.ToShortDateString(), marketData.StockPrice.ToString("C"));
+            client.PublishPriceChange(new MarketData { businessDate = DateTime.Now, StockPrice = 1000 });
 
             Console.WriteLine();
             Console.WriteLine("Press ENTER to unsubscribe and shut down client");
@@ -38,9 +42,9 @@ namespace Microsoft.ServiceModel.Samples
 
         }
 
-        public void PriceChange(string item, double price, double change)
+        public void PriceChange(MarketData marketData)
         {
-            Console.WriteLine("PriceChange(item {0}, price {1}, change {2})", item, price.ToString("C"), change);
+            Console.WriteLine("PriceChange(businessDate {0}, price {1})", marketData.businessDate.ToShortDateString(), marketData.StockPrice.ToString("C"));
         }
     }
 }

@@ -1,0 +1,4 @@
+D:\Plugg\CS_CSharp\SubscribePublishWCF\Common\bin\Debug\Common.dll
+D:\Plugg\CS_CSharp\SubscribePublishWCF\Common\bin\Debug\Common.pdb
+D:\Plugg\CS_CSharp\SubscribePublishWCF\Common\obj\Debug\Common.dll
+D:\Plugg\CS_CSharp\SubscribePublishWCF\Common\obj\Debug\Common.pdb
