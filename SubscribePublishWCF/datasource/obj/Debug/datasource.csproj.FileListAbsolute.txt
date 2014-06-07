@@ -1,0 +1,6 @@
+D:\Plugg\charp\CS\datasource\bin\datasource.exe.config
+D:\Plugg\charp\CS\datasource\bin\datasource.exe
+D:\Plugg\charp\CS\datasource\bin\datasource.pdb
+D:\Plugg\charp\CS\datasource\obj\Debug\datasource.exe
+D:\Plugg\charp\CS\datasource\obj\Debug\datasource.pdb
+D:\Plugg\charp\CS\datasource\obj\Debug\datasource.csprojResolveAssemblyReference.cache

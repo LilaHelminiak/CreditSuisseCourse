@@ -1,0 +1,6 @@
+D:\Plugg\charp\WF_WCF_Samples\WCF\Scenario\DesignPatterns\ListBasedPublishSubscribe\CS\client\bin\client.exe.config
+D:\Plugg\charp\CS\client\bin\client.exe.config
+D:\Plugg\charp\CS\client\bin\client.exe
+D:\Plugg\charp\CS\client\bin\client.pdb
+D:\Plugg\charp\CS\client\obj\Debug\client.exe
+D:\Plugg\charp\CS\client\obj\Debug\client.pdb
