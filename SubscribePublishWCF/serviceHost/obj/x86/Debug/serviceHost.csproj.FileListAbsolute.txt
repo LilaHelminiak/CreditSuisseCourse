@@ -6,3 +6,11 @@ D:\Plugg\charp\CS\serviceHost\bin\Debug\service.pdb
 D:\Plugg\charp\CS\serviceHost\obj\x86\Debug\serviceHost.exe
 D:\Plugg\charp\CS\serviceHost\obj\x86\Debug\serviceHost.pdb
 D:\Plugg\charp\CS\serviceHost\bin\Debug\serviceHost.exe.config
+D:\Plugg\CS_CSharp\SubscribePublishWCF\serviceHost\bin\Debug\serviceHost.exe.config
+D:\Plugg\CS_CSharp\SubscribePublishWCF\serviceHost\bin\Debug\serviceHost.exe
+D:\Plugg\CS_CSharp\SubscribePublishWCF\serviceHost\bin\Debug\serviceHost.pdb
+D:\Plugg\CS_CSharp\SubscribePublishWCF\serviceHost\bin\Debug\service.dll
+D:\Plugg\CS_CSharp\SubscribePublishWCF\serviceHost\bin\Debug\service.pdb
+D:\Plugg\CS_CSharp\SubscribePublishWCF\serviceHost\obj\x86\Debug\serviceHost.csprojResolveAssemblyReference.cache
+D:\Plugg\CS_CSharp\SubscribePublishWCF\serviceHost\obj\x86\Debug\serviceHost.exe
+D:\Plugg\CS_CSharp\SubscribePublishWCF\serviceHost\obj\x86\Debug\serviceHost.pdb

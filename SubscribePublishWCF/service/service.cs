@@ -28,6 +28,7 @@ namespace Microsoft.ServiceModel.Samples
         void PriceChange(string item, double price, double change);
     }
 
+
     public class PriceChangeEventArgs : EventArgs
     {
         public string Item;

@@ -2,6 +2,7 @@
 
 using System;
 using System.ServiceModel;
+using ServiceReference1;
 
 namespace Microsoft.ServiceModel.Samples
 {

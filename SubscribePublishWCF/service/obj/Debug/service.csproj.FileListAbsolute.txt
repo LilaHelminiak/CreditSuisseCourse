@@ -2,3 +2,7 @@ D:\Plugg\charp\CS\service\bin\service.dll
 D:\Plugg\charp\CS\service\bin\service.pdb
 D:\Plugg\charp\CS\service\obj\Debug\service.dll
 D:\Plugg\charp\CS\service\obj\Debug\service.pdb
+D:\Plugg\CS_CSharp\SubscribePublishWCF\service\bin\service.dll
+D:\Plugg\CS_CSharp\SubscribePublishWCF\service\bin\service.pdb
+D:\Plugg\CS_CSharp\SubscribePublishWCF\service\obj\Debug\service.dll
+D:\Plugg\CS_CSharp\SubscribePublishWCF\service\obj\Debug\service.pdb
