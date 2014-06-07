@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5695266c-43bb-4a0a-b1de-45405803716f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/generator" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="generator.xsd" MetadataType="Schema" ID="2eff48b2-ce44-44ca-a18d-352b704df847" SourceId="1" SourceUrl="http://localhost:8080/generator?xsd=xsd2" />
+    <MetadataFile FileName="generator1.xsd" MetadataType="Schema" ID="09052fac-3988-4b60-b712-16efbaea687d" SourceId="1" SourceUrl="http://localhost:8080/generator?xsd=xsd1" />
+    <MetadataFile FileName="generator.disco" MetadataType="Disco" ID="ca5ce329-9e4d-4419-a632-8e71863f5981" SourceId="1" SourceUrl="http://localhost:8080/generator?disco" />
+    <MetadataFile FileName="DataGeneratorService.wsdl" MetadataType="Wsdl" ID="3deb527d-5bf4-47eb-8989-0ca2e5add250" SourceId="1" SourceUrl="http://localhost:8080/generator?wsdl" />
+    <MetadataFile FileName="generator2.xsd" MetadataType="Schema" ID="680c6314-00ea-4f37-9662-d7f996367346" SourceId="1" SourceUrl="http://localhost:8080/generator?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

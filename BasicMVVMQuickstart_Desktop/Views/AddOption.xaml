@@ -1,0 +1,33 @@
+﻿<Window x:Class="BasicMVVMQuickstart_Desktop.Views.AddOption"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AddOption" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Label HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Margin="0,10,0,0">Define the option</Label>
+        <Label Grid.Row="1" HorizontalContentAlignment="Right" VerticalAlignment="Center" Margin="0,-10,0,0">Type:</Label>
+        <Label Grid.Row="2" HorizontalContentAlignment="Right" VerticalAlignment="Center" Margin="0,-10,0,0">Maturity:</Label>
+        <Label Grid.Row="3" HorizontalContentAlignment="Right" VerticalAlignment="Center" Margin="0,-10,0,0">Price:</Label>
+
+        <RadioButton Name="PutButton" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="10,0,0,0">Put</RadioButton>
+        <RadioButton Name="CallButton" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="60,0,0,0">Call</RadioButton>
+        <Label Name="typeWarningLabel" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" Margin="10,0,0,0" Visibility="Hidden" Foreground="Red">hej</Label>
+        <DatePicker Name="Date" Grid.Column="1" Grid.Row="2" Width="Auto" Height="Auto" VerticalAlignment="Center" Margin="10,-10,20,0" />
+        <Label Name="dateWarningLabel" Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" Margin="10,0,0,0" Visibility="Hidden" Foreground="Red">hejDate</Label>
+        <TextBox Name ="Price" Grid.Column="1" Grid.Row="3" Width="Auto" Height="Auto" VerticalAlignment="Center" Margin="10,-10,20,0" />
+        <Label Name="priceWarningLabel" Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" Margin="10,0,0,0" Visibility="Hidden" Foreground="Red">hejPrice</Label>
+        <Button Grid.Row="4" Command="{Binding AddOptionCommand}" Width="50" Height="25" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="79,13,149,14">Create</Button>
+        <Button Grid.Row="4" Command="{Binding CloseWindowCommand}" Width="50" Height="25" HorizontalAlignment="Center" Margin="35,13,83,14" Grid.Column="1">Abort</Button>        
+    </Grid>
+</Window>
