@@ -13,3 +13,5 @@ C:\Users\Lila\Documents\Visual Studio 2010\Projects\Interface\Interface\obj\x86\
 C:\Users\Lila\Documents\Visual Studio 2010\Projects\Interface\Interface\obj\x86\Debug\AddNewOption.g.cs
 C:\Users\Lila\Documents\Visual Studio 2010\Projects\Interface\Interface\obj\x86\Debug\AddToPortfolio.baml
 C:\Users\Lila\Documents\Visual Studio 2010\Projects\Interface\Interface\obj\x86\Debug\AddToPortfolio.g.cs
+D:\Plugg\CS_CSharp\Interface\Interface\obj\x86\Debug\Interface.exe
+D:\Plugg\CS_CSharp\Interface\Interface\obj\x86\Debug\Interface.pdb
