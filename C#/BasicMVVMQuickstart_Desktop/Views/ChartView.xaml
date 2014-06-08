@@ -1,20 +1,38 @@
-﻿<UserControl x:Class="BasicMVVMQuickstart_Desktop.Views.ChartView"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit" 
+             xmlns:datavis="clr-namespace:System.Windows.Controls.DataVisualization;assembly=‌​System.Windows.Controls.DataVisualization.Toolkit"
+             x:Class="BasicMVVMQuickstart_Desktop.Views.ChartView"
              mc:Ignorable="d"
              d:DesignHeight="300"
-             d:DesignWidth="300">
+             d:DesignWidth="600">
     <Grid x:Name="LayoutRoot">
         <GroupBox Header="PnL Chart" Grid.Column="0" Grid.Row="1" Height="Auto" Margin="10,5,10,10">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition />
                 </Grid.RowDefinitions>
-                <Button Grid.Row="0" Command="{Binding SubmitCommand}" Width="150" Margin="2,0,2,2" >Generate PnL chart to file</Button>
-                <Image Grid.Row="1" Source="../Images/PnLchart.jpg" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,25"/>
+                
+                <Button Command="{Binding SubmitCommand}" Width="150" VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="0,10,0,0" Content="Generate PnL chart to file" />
+                
+                <chartingToolkit:Chart HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <chartingToolkit:Chart.DataContext>
+                        <PointCollection>1,10 2,20 3,30 8,32 4,40</PointCollection>
+                    </chartingToolkit:Chart.DataContext>
+                    <chartingToolkit:LineSeries DependentValuePath="X" IndependentValuePath="Y" ItemsSource="{Binding}" Title="PnL" HorizontalAlignment="Center">
+                        <chartingToolkit:LineSeries.LegendItemStyle >
+                            <Style TargetType="{x:Type chartingToolkit:LegendItem}">
+                                
+                            </Style>
+                        </chartingToolkit:LineSeries.LegendItemStyle>
+                    </chartingToolkit:LineSeries>
+                </chartingToolkit:Chart>
+
+
+
+
             </Grid>
         </GroupBox>
     </Grid>
