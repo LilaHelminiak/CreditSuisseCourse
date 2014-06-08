@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit" 
              xmlns:datavis="clr-namespace:System.Windows.Controls.DataVisualization;assembly=‌​System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:ViewModels="clr-namespace:BasicMVVMQuickstart_Desktop.ViewModels"
              x:Class="BasicMVVMQuickstart_Desktop.Views.ChartView"
              mc:Ignorable="d"
              d:DesignHeight="300"
@@ -12,22 +13,14 @@
     <Grid x:Name="LayoutRoot">
         <GroupBox Header="PnL Chart" Grid.Column="0" Grid.Row="1" Height="Auto" Margin="10,5,10,10">
             <Grid>
-                <Grid.RowDefinitions>
-                </Grid.RowDefinitions>
-                
+
                 <Button Command="{Binding SubmitCommand}" Width="150" VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="0,10,0,0" Content="Generate PnL chart to file" />
-                
+
                 <chartingToolkit:Chart HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <chartingToolkit:Chart.DataContext>
-                        <PointCollection>1,10 2,20 3,30 8,32 4,40</PointCollection>
-                    </chartingToolkit:Chart.DataContext>
-                    <chartingToolkit:LineSeries DependentValuePath="X" IndependentValuePath="Y" ItemsSource="{Binding}" Title="PnL" HorizontalAlignment="Center">
-                        <chartingToolkit:LineSeries.LegendItemStyle >
-                            <Style TargetType="{x:Type chartingToolkit:LegendItem}">
-                                
-                            </Style>
-                        </chartingToolkit:LineSeries.LegendItemStyle>
-                    </chartingToolkit:LineSeries>
+                    <chartingToolkit:LineSeries DependentValuePath="Value" 
+                                                  IndependentValuePath="Key" 
+                                                  ItemsSource="{Binding Path=data}"
+                                                  Title="PnL"/>
                 </chartingToolkit:Chart>
 
 

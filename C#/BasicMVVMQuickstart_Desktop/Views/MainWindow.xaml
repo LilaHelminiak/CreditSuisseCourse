@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="Basic MVVM Quickstart"
         Height="700"
-        Width="1000"
+        Width="1200"
         d:DataContext="{d:DesignInstance basicMvvmQuickstartDesktop:QuestionnaireViewDesignViewModel, IsDesignTimeCreatable=True}"
         prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid x:Name="LayoutRoot">

@@ -11,24 +11,19 @@ namespace BasicMVVMQuickstart_Desktop.ViewModels
 {
     public class ChartViewModel : BindableBase
     {
-        public ObservableCollection<ChartElement> PnL { get; set; }
-
-        public class point : ChartElement
+        private ObservableCollection<KeyValuePair<int, int>> _data;
+        public ObservableCollection<KeyValuePair<int, int>> data
         {
-            public double x;
-            public double y;
-            public point(double x, double y)
-            {
-                this.x = x;
-                this.y = y;
-            }
+            get { return _data; }
         }
+
         public ChartViewModel()
         {
-            PnL = new ObservableCollection<ChartElement>();
-            PnL.Add(new point(0, 0));
-            PnL.Add(new point(10, 20));
-            PnL.Add(new point(30, 10));
+            _data = new ObservableCollection<KeyValuePair<int, int>>();
+
+            _data.Add(new KeyValuePair<int, int>(0, 0));
+            _data.Add(new KeyValuePair<int, int>(10, 50));
+            _data.Add(new KeyValuePair<int, int>(4, 11));
         }
 
     }
