@@ -3,7 +3,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ServiceModel;
 using System.Windows.Input;
+using BasicMVVMQuickstart_Desktop.MarketServiceReference;
 using BasicMVVMQuickstart_Desktop.Model;
 using BasicMVVMQuickstart_Desktop.Views;
 using Microsoft.Practices.Prism.Commands;
@@ -38,6 +40,8 @@ namespace BasicMVVMQuickstart_Desktop.ViewModels
             this.AddOptionCommand = new DelegateCommand<object>(this.ShowAddOptionDialog);
             this.TradeOptionCommand = new DelegateCommand<object>(this.ShowTradeOptionDialog);
             this.ConfigureMarketCommand = new DelegateCommand<object>(this.ShowConfigureMarketDialog);
+
+
         }
 
         public void ShowAddOptionDialog(object obj)
@@ -52,7 +56,7 @@ namespace BasicMVVMQuickstart_Desktop.ViewModels
         public void ShowConfigureMarketDialog(object obj)
         {            
             var newWindow = new ConfigureMarket();
-            var viewModel = new ConfigureMarketViewModel(Market);
+            var viewModel = new ConfigureMarketViewModel();
             viewModel.RequestClose += newWindow.Close;
             newWindow.DataContext = viewModel;
             newWindow.Show();

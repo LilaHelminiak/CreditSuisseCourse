@@ -1,0 +1,1 @@
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Pricing\bin\Debug\CS.Pricing.exe.config

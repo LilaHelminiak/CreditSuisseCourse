@@ -18,15 +18,15 @@ namespace BasicMVVMQuickstart_Desktop.ViewModels
         public ICommand CloseWindowCommand { get; set; }
 
         public ConfigureData ConfigureData { get; set; }
-        public MarketData Market { get; set; }
+        //public MarketData Market { get; set; }
 
-        public ConfigureMarketViewModel(MarketData Market)
+        public ConfigureMarketViewModel()
         {
             this.CloseWindowCommand = new DelegateCommand<object>(this.Close);
             this.StartSimulationCommand = new DelegateCommand<object>(this.StartSimulation);
 
             this.ConfigureData = new ConfigureData();
-            this.Market = Market;
+            //this.Market = Market;
         }
 
         public virtual void Close(object obj)
