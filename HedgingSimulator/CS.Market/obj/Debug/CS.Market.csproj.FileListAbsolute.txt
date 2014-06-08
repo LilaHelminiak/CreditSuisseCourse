@@ -1,0 +1,8 @@
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Market\bin\Debug\CS.Market.exe.config
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Market\bin\Debug\CS.Market.exe
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Market\bin\Debug\CS.Market.pdb
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Market\bin\Debug\CS.Core.dll
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Market\bin\Debug\CS.Core.pdb
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Market\obj\Debug\CS.Market.csprojResolveAssemblyReference.cache
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Market\obj\Debug\CS.Market.exe
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Market\obj\Debug\CS.Market.pdb

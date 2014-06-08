@@ -1,0 +1,16 @@
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Pricing\bin\Debug\CS.Pricing.exe.config
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Pricing\bin\Debug\CS.Pricing.exe
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Pricing\bin\Debug\CS.Pricing.pdb
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Pricing\bin\Debug\CS.Core.dll
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Pricing\bin\Debug\CS.Core.pdb
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Pricing\obj\Debug\CS.Pricing.exe
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Pricing\obj\Debug\CS.Pricing.pdb
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Pricing\obj\Debug\CS.Pricing.csprojResolveAssemblyReference.cache
+D:\Plugg\CS_CSharp\C#\CS.Pricing\bin\Debug\CS.Pricing.exe.config
+D:\Plugg\CS_CSharp\C#\CS.Pricing\obj\Debug\CS.Pricing.exe
+D:\Plugg\CS_CSharp\C#\CS.Pricing\obj\Debug\CS.Pricing.pdb
+D:\Plugg\CS_CSharp\C#\CS.Pricing\bin\Debug\CS.Pricing.exe
+D:\Plugg\CS_CSharp\C#\CS.Pricing\bin\Debug\CS.Pricing.pdb
+D:\Plugg\CS_CSharp\C#\CS.Pricing\bin\Debug\CS.Core.dll
+D:\Plugg\CS_CSharp\C#\CS.Pricing\bin\Debug\CS.Core.pdb
+D:\Plugg\CS_CSharp\C#\CS.Pricing\obj\Debug\CS.Pricing.csprojResolveAssemblyReference.cache

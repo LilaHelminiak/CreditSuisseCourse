@@ -1,0 +1,44 @@
+﻿<Window x:Class="TradingUI.Views.ConfigureMarket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ConfigureMarket" Height="400" Width="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label Grid.ColumnSpan="2" Content=" Configure the market:" Margin="30,5,0,0"/>
+        <TextBlock Grid.ColumnSpan="2" Text=" 1. Create options that shall be available in the market " Margin="30,30,0,0"/>
+        <TextBlock Grid.ColumnSpan="2" Text="     before the simulation starts" Margin="30,45,0,0"/>
+        <TextBlock Grid.ColumnSpan="2" Text=" 2. Fill the required configuration data in format 0.00" Margin="30,70,0,0"/>
+        
+        
+        <Label Grid.Row="1"  VerticalAlignment="Center" HorizontalAlignment="Right">Drift of GBM:</Label>
+        <TextBox Grid.Row="1" Grid.Column="1" Height="25" Width="110" HorizontalAlignment="Left"></TextBox>
+
+        <Label Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="-90, 0, 0, 0">Volatility of GBM:</Label>
+        <TextBox Grid.Row="2" Grid.Column="1" Height="25" Width="110" HorizontalAlignment="Left"></TextBox>
+
+        <Label Grid.Row="3"  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="-90, 0, 0, 0">Hedging volatility: </Label>
+        <TextBox Grid.Row="3" Grid.Column="1" Height="25" Width="110" HorizontalAlignment="Left"></TextBox>
+
+        <Label Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="-90, 0, 0, 0">Seed: </Label>
+        <TextBox Grid.Row="4" Grid.Column="1" Height="25" Width="110" HorizontalAlignment="Left"></TextBox>
+
+        <Label Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="-90, 0, 0, 0">Stock price: </Label>
+        <TextBox Grid.Row="5" Grid.Column="1" Height="25" Width="110" HorizontalAlignment="Left"></TextBox>
+
+        <Button Command="{Binding StartSimulationCommand}" Grid.Row="6" Width="100" Height="25">Start simulation</Button>
+        <Button Command="{Binding CloseWindowCommand}" Grid.Row="6" Grid.Column="1" Width="100" Height="25">Cancel</Button>
+        
+    </Grid>
+</Window>

@@ -42,23 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Market\IMarketData.cs" />
-    <Compile Include="Market\IVolSurface.cs" />
-    <Compile Include="Market\FlatVolSurface.cs" />
-    <Compile Include="Market\MarketData.cs" />
-    <Compile Include="Numerical\NormalDistribution.cs" />
-    <Compile Include="Pricing\IResult.cs" />
-    <Compile Include="Pricing\ITradePricer.cs" />
-    <Compile Include="Pricing\OptionData.cs" />
-    <Compile Include="Pricing\OptionResult.cs" />
-    <Compile Include="Pricing\PricingModels\CashPricer.cs" />
-    <Compile Include="Pricing\PricingModels\StockPricer.cs" />
-    <Compile Include="Pricing\Result.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Trades\ITrade.cs" />
-    <Compile Include="Trades\TradeTypes\Cash.cs" />
-    <Compile Include="Trades\TradeTypes\Option.cs" />
-    <Compile Include="Trades\TradeTypes\Stock.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

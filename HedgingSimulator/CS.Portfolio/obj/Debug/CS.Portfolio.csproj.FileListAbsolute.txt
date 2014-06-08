@@ -1,0 +1,8 @@
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Portfolio\bin\Debug\CS.Portfolio.exe.config
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Portfolio\bin\Debug\CS.Portfolio.exe
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Portfolio\bin\Debug\CS.Portfolio.pdb
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Portfolio\bin\Debug\CS.Core.dll
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Portfolio\bin\Debug\CS.Core.pdb
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Portfolio\obj\Debug\CS.Portfolio.csprojResolveAssemblyReference.cache
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Portfolio\obj\Debug\CS.Portfolio.exe
+D:\Plugg\CS_CSharp\HedgingSimulator\CS.Portfolio\obj\Debug\CS.Portfolio.pdb
