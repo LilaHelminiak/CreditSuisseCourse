@@ -5,7 +5,7 @@
       <xsd:import schemaLocation="http://localhost:8080/PricerService/?xsd=xsd0" namespace="PricerServiceLibrary" />
       <xsd:import schemaLocation="http://localhost:8080/PricerService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8080/PricerService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CS.Pricing" />
-      <xsd:import schemaLocation="http://localhost:8080/PricerService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CS.Trades.TradeTypes" />
+      <xsd:import schemaLocation="http://localhost:8080/PricerService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CS.Market" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IPricerContract_Subscribe_InputMessage">

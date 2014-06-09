@@ -20,13 +20,14 @@ namespace CS.Pricing
             MarketData = marketData;
             OptionResults = optionResults;
         }*/
-        
+
         /// <summary>
         /// Gets or sets the market data.
         /// </summary>
         /// <value>The market data.</value>
+
         [DataMember]
-        public IMarketData MarketData { get; set; }
+        public MarketData MarketData { get; set; }
 
 
         /// <summary>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="16def80f-36fc-41ee-8013-ebce26eb8d8f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="66361266-625f-4973-b01e-845e8ea17840" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,13 +22,13 @@
     <MetadataSource Address="http://localhost:8080/PricerService/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="47af6b17-a0db-4445-a00b-884a124df81f" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?xsd=xsd2" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="ac514365-f126-4a56-ab7b-b9077e58dcda" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?xsd=xsd1" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="1fedcb67-a51d-44a9-83ab-3aa17b2d5c55" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?xsd=xsd0" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="f81e3ed6-ae3b-40c1-87fd-1d25c0ceb266" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?disco" />
-    <MetadataFile FileName="item.wsdl" MetadataType="Wsdl" ID="21570b98-1ebc-4fc4-bebf-011d31ff7889" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?wsdl=wsdl0" />
-    <MetadataFile FileName="PricerService.wsdl" MetadataType="Wsdl" ID="af3fcec5-b7d2-4c04-a05c-9d87482e4ec1" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?wsdl" />
-    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="307fdc4b-d501-4a6f-ba87-43878b713d5b" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?xsd=xsd3" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="6d798791-da04-41ac-bdfd-2a22e8c36df6" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?xsd=xsd2" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="a9980d4f-d66e-4037-9b51-baa8b3c1f2cd" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="61d4d0af-4bd3-4aa0-b3ec-1e74bedd74cd" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="954d457f-c87e-4d0b-b81d-61631b0518f1" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?disco" />
+    <MetadataFile FileName="item.wsdl" MetadataType="Wsdl" ID="7cf63049-d205-4532-9ba7-1cb29e5d6ee5" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?wsdl=wsdl0" />
+    <MetadataFile FileName="PricerService.wsdl" MetadataType="Wsdl" ID="342906b9-9767-4a18-ba2e-09f1b071b04c" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?wsdl" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="9c0f7924-9525-431d-9877-d0ba468196c8" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
