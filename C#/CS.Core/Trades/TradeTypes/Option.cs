@@ -103,19 +103,26 @@ namespace CS.Trades.TradeTypes
         public DateTime Maturity { get; private set; }
 
         /// <summary>
+        /// Empty constructor for 
+        /// </summary>
+        public OptionContract()
+        { }
+
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="OptionContract"/> class.
         /// </summary>
         /// <param name="optionType">Type of the option.</param>
         /// <param name="baseNotional">The base notional.</param>
         /// <param name="strike">The strike.</param>
         /// <param name="maturity">The maturity.</param>
-        /*public OptionContract(Type optionType, double baseNotional, double strike, DateTime maturity)
+        public OptionContract(Type optionType, double baseNotional, double strike, DateTime maturity)
         {
             OptionType = optionType;
             BaseNotional = baseNotional;
             Strike = strike;
             Maturity = maturity;
-        }*/
+        }
 
         /// <summary>
         /// Equalses the specified other.

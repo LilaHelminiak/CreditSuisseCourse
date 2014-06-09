@@ -19,7 +19,7 @@ namespace TradingUI.ViewModels
         {
             portfolioData = new BindingList<PortfolioData>();
             dataReceiver = new Receiver();
-            Task task1 = new Task(new Action(Receiver.SubscribeToService));
+            Task task1 = new Task(new Action(dataReceiver.SubscribeToService));
             task1.Start();
 
             this.MarketViewModel = new MarketViewModel(portfolioData, dataReceiver);

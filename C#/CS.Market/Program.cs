@@ -32,6 +32,8 @@ namespace CS.Market
                 {
                     Console.WriteLine("Hit enter to PublishMarketData(marketData)");
                     Console.ReadKey();
+                    marketData.Time = marketData.Time.AddDays(1);
+                    marketData.StockPrice += 100;
                     publisher.PublishMarketData(marketData);
 
                 }                

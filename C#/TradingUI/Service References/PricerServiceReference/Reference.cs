@@ -9,225 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace TradingUI.PricerServiceReference {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OptionData", Namespace="http://schemas.datacontract.org/2004/07/CS.Pricing")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TradingUI.PricerServiceReference.OptionResult[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TradingUI.PricerServiceReference.OptionResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TradingUI.PricerServiceReference.Result))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TradingUI.PricerServiceReference.OptionContract))]
-    public partial class OptionData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private object MarketDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TradingUI.PricerServiceReference.OptionResult[] OptionResultsField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public object MarketData {
-            get {
-                return this.MarketDataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MarketDataField, value) != true)) {
-                    this.MarketDataField = value;
-                    this.RaisePropertyChanged("MarketData");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TradingUI.PricerServiceReference.OptionResult[] OptionResults {
-            get {
-                return this.OptionResultsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OptionResultsField, value) != true)) {
-                    this.OptionResultsField = value;
-                    this.RaisePropertyChanged("OptionResults");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OptionResult", Namespace="http://schemas.datacontract.org/2004/07/CS.Pricing")]
-    [System.SerializableAttribute()]
-    public partial class OptionResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TradingUI.PricerServiceReference.Result BaseResultField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TradingUI.PricerServiceReference.OptionContract ContractField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TradingUI.PricerServiceReference.Result BaseResult {
-            get {
-                return this.BaseResultField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BaseResultField, value) != true)) {
-                    this.BaseResultField = value;
-                    this.RaisePropertyChanged("BaseResult");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TradingUI.PricerServiceReference.OptionContract Contract {
-            get {
-                return this.ContractField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContractField, value) != true)) {
-                    this.ContractField = value;
-                    this.RaisePropertyChanged("Contract");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Result", Namespace="http://schemas.datacontract.org/2004/07/CS.Pricing")]
-    [System.SerializableAttribute()]
-    public partial class Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double DeltaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double ValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Delta {
-            get {
-                return this.DeltaField;
-            }
-            set {
-                if ((this.DeltaField.Equals(value) != true)) {
-                    this.DeltaField = value;
-                    this.RaisePropertyChanged("Delta");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((this.ValueField.Equals(value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OptionContract", Namespace="http://schemas.datacontract.org/2004/07/CS.Trades.TradeTypes")]
-    [System.SerializableAttribute()]
-    public partial class OptionContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="PricerServiceLibrary", ConfigurationName="PricerServiceReference.IPricerContract", CallbackContract=typeof(TradingUI.PricerServiceReference.IPricerContractCallback), SessionMode=System.ServiceModel.SessionMode.Required)]
@@ -246,17 +28,33 @@ namespace TradingUI.PricerServiceReference {
         System.Threading.Tasks.Task UnsubscribeAsync();
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="PricerServiceLibrary/IPricerContract/PublishUIData")]
-        void PublishUIData(TradingUI.PricerServiceReference.OptionData optionData);
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Pricing.OptionResult[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Pricing.OptionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Pricing.Result))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract.Type))]
+        void PublishUIData(CS.Pricing.OptionData optionData);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="PricerServiceLibrary/IPricerContract/PublishUIData")]
-        System.Threading.Tasks.Task PublishUIDataAsync(TradingUI.PricerServiceReference.OptionData optionData);
+        System.Threading.Tasks.Task PublishUIDataAsync(CS.Pricing.OptionData optionData);
+        
+        [System.ServiceModel.OperationContractAttribute(IsTerminating=true, Action="PricerServiceLibrary/IPricerContract/AddNewOption", ReplyAction="PricerServiceLibrary/IPricerContract/AddNewOptionResponse")]
+        void AddNewOption(CS.Trades.TradeTypes.OptionContract optionData);
+        
+        [System.ServiceModel.OperationContractAttribute(IsTerminating=true, Action="PricerServiceLibrary/IPricerContract/AddNewOption", ReplyAction="PricerServiceLibrary/IPricerContract/AddNewOptionResponse")]
+        System.Threading.Tasks.Task AddNewOptionAsync(CS.Trades.TradeTypes.OptionContract optionData);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IPricerContractCallback {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="PricerServiceLibrary/IPricerContract/GetPricerData")]
-        void GetPricerData(TradingUI.PricerServiceReference.OptionData newData);
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Pricing.OptionResult[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Pricing.OptionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Pricing.Result))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract.Type))]
+        void GetPricerData(CS.Pricing.OptionData newData);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -303,12 +101,20 @@ namespace TradingUI.PricerServiceReference {
             return base.Channel.UnsubscribeAsync();
         }
         
-        public void PublishUIData(TradingUI.PricerServiceReference.OptionData optionData) {
+        public void PublishUIData(CS.Pricing.OptionData optionData) {
             base.Channel.PublishUIData(optionData);
         }
         
-        public System.Threading.Tasks.Task PublishUIDataAsync(TradingUI.PricerServiceReference.OptionData optionData) {
+        public System.Threading.Tasks.Task PublishUIDataAsync(CS.Pricing.OptionData optionData) {
             return base.Channel.PublishUIDataAsync(optionData);
+        }
+        
+        public void AddNewOption(CS.Trades.TradeTypes.OptionContract optionData) {
+            base.Channel.AddNewOption(optionData);
+        }
+        
+        public System.Threading.Tasks.Task AddNewOptionAsync(CS.Trades.TradeTypes.OptionContract optionData) {
+            return base.Channel.AddNewOptionAsync(optionData);
         }
     }
 }

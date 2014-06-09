@@ -5,6 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using CS.Market;
+using CS.Trades.TradeTypes;
 
 namespace CS.Pricing
 {
@@ -17,6 +18,8 @@ namespace CS.Pricing
         void Unsubscribe();
         [OperationContract(IsOneWay = true)]
         void PublishUIData(OptionData optionData);
+        [OperationContract(IsOneWay = false, IsTerminating = true)]
+        void AddNewOption(OptionContract optionData);
     }
 
     public interface IPricerClientContract
@@ -30,11 +33,17 @@ namespace CS.Pricing
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
     public class PricerService : IPricerContract
     {
+        private List<OptionContract> options;
+
+        public PricerService()
+        {
+            options = new List<OptionContract>();
+        }
+
         public static event PricerDataChangeEventHandler PricerDataChangeEvent;
         public delegate void PricerDataChangeEventHandler(object sender, OptionData optionData);
 
         IPricerClientContract callback = null;
-
         PricerDataChangeEventHandler pricerChangeHandler = null;
 
         //Clients call this service operation to subscribe.
@@ -64,6 +73,11 @@ namespace CS.Pricing
             {
                 PricerDataChangeEvent(this, optionData);
             }
+        }
+
+        public void AddNewOption(OptionContract option)
+        {
+            options.Add(option);
         }
 
         //This event handler runs when a PriceChange event is raised.

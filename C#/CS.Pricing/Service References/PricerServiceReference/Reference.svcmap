@@ -28,6 +28,7 @@
     <MetadataFile FileName="item.disco" MetadataType="Disco" ID="954d457f-c87e-4d0b-b81d-61631b0518f1" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?disco" />
     <MetadataFile FileName="item.wsdl" MetadataType="Wsdl" ID="7cf63049-d205-4532-9ba7-1cb29e5d6ee5" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?wsdl=wsdl0" />
     <MetadataFile FileName="PricerService.wsdl" MetadataType="Wsdl" ID="342906b9-9767-4a18-ba2e-09f1b071b04c" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?wsdl" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="d52dd3bd-692e-44e0-b349-4d95aaaba048" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?xsd=xsd4" />
     <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="9c0f7924-9525-431d-9877-d0ba468196c8" SourceId="1" SourceUrl="http://localhost:8080/PricerService/?xsd=xsd3" />
   </Metadata>
   <Extensions>

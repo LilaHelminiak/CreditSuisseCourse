@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="PricerServiceLibrary" elementFormDefault="qualified" targetNamespace="PricerServiceLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8080/PricerService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CS.Pricing" />
+  <xs:import schemaLocation="http://localhost:8080/PricerService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/CS.Trades.TradeTypes" />
   <xs:element name="Subscribe">
     <xs:complexType>
       <xs:sequence />
@@ -28,10 +29,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="AddNewOption">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CS.Trades.TradeTypes" minOccurs="0" name="optionData" nillable="true" type="q2:OptionContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewOptionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetPricerData">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CS.Pricing" minOccurs="0" name="newData" nillable="true" type="q2:OptionData" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CS.Pricing" minOccurs="0" name="newData" nillable="true" type="q3:OptionData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

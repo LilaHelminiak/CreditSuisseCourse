@@ -6,6 +6,7 @@
       <xsd:import schemaLocation="http://localhost:8080/PricerService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8080/PricerService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CS.Pricing" />
       <xsd:import schemaLocation="http://localhost:8080/PricerService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CS.Market" />
+      <xsd:import schemaLocation="http://localhost:8080/PricerService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/CS.Trades.TradeTypes" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IPricerContract_Subscribe_InputMessage">
@@ -23,6 +24,12 @@
   <wsdl:message name="IPricerContract_PublishUIData_InputMessage">
     <wsdl:part name="parameters" element="tns:PublishUIData" />
   </wsdl:message>
+  <wsdl:message name="IPricerContract_AddNewOption_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewOption" />
+  </wsdl:message>
+  <wsdl:message name="IPricerContract_AddNewOption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewOptionResponse" />
+  </wsdl:message>
   <wsdl:message name="IPricerContract_GetPricerData_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GetPricerData" />
   </wsdl:message>
@@ -37,6 +44,10 @@
     </wsdl:operation>
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PublishUIData">
       <wsdl:input wsam:Action="PricerServiceLibrary/IPricerContract/PublishUIData" message="tns:IPricerContract_PublishUIData_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="true" name="AddNewOption">
+      <wsdl:input wsam:Action="PricerServiceLibrary/IPricerContract/AddNewOption" message="tns:IPricerContract_AddNewOption_InputMessage" />
+      <wsdl:output wsam:Action="PricerServiceLibrary/IPricerContract/AddNewOptionResponse" message="tns:IPricerContract_AddNewOption_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetPricerData">
       <wsdl:output wsam:Action="PricerServiceLibrary/IPricerContract/GetPricerData" message="tns:IPricerContract_GetPricerData_OutputCallbackMessage" />

@@ -38,7 +38,6 @@ namespace TradingUI.ViewModels
             //this.Market = new MarketData();
 
             this.dataReceiver = dataReceiver;
-
             this.AddOptionCommand = new DelegateCommand<object>(this.ShowAddOptionDialog);
             this.TradeOptionCommand = new DelegateCommand<object>(this.ShowTradeOptionDialog);
             this.ConfigureMarketCommand = new DelegateCommand<object>(this.ShowConfigureMarketDialog);
@@ -49,7 +48,7 @@ namespace TradingUI.ViewModels
         public void ShowAddOptionDialog(object obj)
         {
             var newWindow = new AddOption();
-            var viewModel = new AddOptionViewModel(optionList);
+            var viewModel = new AddOptionViewModel(optionList, dataReceiver);
             viewModel.RequestClose += newWindow.Close;
             newWindow.DataContext = viewModel;
             newWindow.Show();

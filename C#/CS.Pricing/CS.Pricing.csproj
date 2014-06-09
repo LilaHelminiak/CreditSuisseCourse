@@ -93,6 +93,9 @@
     <None Include="Service References\PricerServiceReference\item3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\PricerServiceReference\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\PricerServiceReference\PricerService.wsdl" />
   </ItemGroup>
   <ItemGroup>

@@ -9,12 +9,14 @@ using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
 using System.Windows;
 using System.ComponentModel;
+using CS.Trades.TradeTypes;
 
 namespace TradingUI.ViewModels
 {
     public class AddOptionViewModel : BindableBase
     {
         BindingList<OptionDataGrid> optionList;
+        public Receiver dataReceiver;
 
         public event Action RequestClose;
         public ICommand AddOptionCommand { get; set; }
@@ -30,8 +32,10 @@ namespace TradingUI.ViewModels
         public DateTime? maturityDate { get; set; }
         public string priceTextbox { get; set; }
 
-        public AddOptionViewModel(BindingList<OptionDataGrid> optionList)
+        public AddOptionViewModel(BindingList<OptionDataGrid> optionList, Receiver dataReceiver)
         {
+            this.dataReceiver = dataReceiver;
+
             this.AddOptionCommand = new DelegateCommand<object>(this.AddOption);
             this.CloseWindowCommand = new DelegateCommand<object>(this.Close);
 
@@ -52,6 +56,7 @@ namespace TradingUI.ViewModels
 
         public void AddOption(object obj)
         {
+            var option = new OptionContract();
             var newOption = new OptionDataGrid();
             bool correctOption;
 
@@ -67,6 +72,8 @@ namespace TradingUI.ViewModels
 
             if (correctOption)
             {
+                option = new OptionContract(OptionContract.Type.Put, 1, newOption.Price, newOption.Maturity);
+                dataReceiver.AddOptionToPricer(option);
                 optionList.Add(newOption);
                 this.Close(obj);
             }
