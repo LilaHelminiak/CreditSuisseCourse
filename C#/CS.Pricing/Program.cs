@@ -7,21 +7,52 @@ using CS.Pricing.PricerServiceReference;
 
 namespace CS.Pricing
 {
-    class Pricer : IMarketContractCallback
+    class Pricer : IMarketContractCallback, IPricerContractCallback
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Pricing App");
+            var pricer = new Pricer();
+            pricer.HostPriceService();         
 
-            
+
+
+            // Every new MarketData price options from contract set
+            // Publish OptionData
+
+            // Handle adding option to contact set
+        }
+
+        public void HostPriceService()
+        {
             using (ServiceHost host = new ServiceHost(typeof(PricerService)))
             {
                 // Init Pricer as a service for Trading UI
                 host.Open();
                 Console.WriteLine("The Pricer Service is ready at: {0}", host.BaseAddresses.FirstOrDefault().ToString());
 
+                // Set Pricer as publisher of PricerService
+                InstanceContext publisherSite = new InstanceContext(new Pricer());
+                PricerContractClient publisher = new PricerContractClient(publisherSite);
+
+
+                Console.WriteLine("Hit enter to publish OptionData");
+                Console.ReadKey();
+                var result = new Result();
+                result.Delta = 0.3;
+                result.Value = 500;
+                var oResult = new OptionResult();
+                oResult.BaseResult = result;
+
+                OptionData newOptionData = new OptionData()
+                {
+                    OptionResults = new OptionResult[1]{oResult}
+                };
+
+
+                publisher.PublishUIData(newOptionData);
                 
-                // Set Pricer as the client of MarketService
+                /* Set Pricer as the client of MarketService
                 InstanceContext clientSite = new InstanceContext(null, new Pricer());
                 MarketContractClient client = new MarketContractClient(clientSite);
 
@@ -33,40 +64,30 @@ namespace CS.Pricing
 
                 //Subscribe for MarketService
                 Console.WriteLine("Subscribing to MarketService");
-                client.Subscribe();
-
-                // Set Pricer as publisher of PricerService
-                InstanceContext publisherSite = new InstanceContext(new Pricer());
-                PricerContractClient publisher = new PricerContractClient(publisherSite);
-
-                Optio marketData = new MarketData();
-                marketData.businessDate = DateTime.Parse("2015-02-13");
-                marketData.StockPrice = 1000;
-
-                Console.WriteLine("Sending PublishPriceChange(marketData)");
-                //client.PublishPriceChange("Gold", 400.00D, -0.25D);
-                client.PublishPriceChange(marketData);
+                client.Subscribe();*/
 
                 Console.WriteLine("Press <Enter> to stop the service");
                 Console.ReadKey();
                 host.Close();
-            }        
-
-
-
-            // Every new MarketData price options from contract set
-            // Publish OptionData
-
-            // Handle adding option to contact set
+            }    
         }
 
         public void GetMarketData(MarketData marketData)
         {
-            Console.WriteLine("Got new MarketData. Publishing OptionData");
-            OptionData newOptionData = new OptionData();
-            newOptionData.MarketData = marketData;
-            newOptionData.OptionResults = new OptionResult[1];
-            newOptionData.OptionResults[0] = new OptionResult( 
+           /* Console.WriteLine("Got new MarketData. Publishing OptionData");
+            var result = new Result();
+            result.Delta = 0.3;
+            result.Value = 500;
+            OptionData newOptionData = new OptionData(marketData, new OptionResult[] { new OptionResult(null, result) });
+
+            // Set Pricer as publisher of PricerService
+            InstanceContext publisherSite = new InstanceContext(new Pricer());
+            PricerContractClient publisher = new PricerContractClient(publisherSite);
+            publisher.PublishUIData(newOptionData);*/
+        }
+
+        public void GetPricerData(OptionData optionData)
+        {
         }
     }
 }

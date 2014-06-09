@@ -60,7 +60,10 @@ namespace CS.Market
 
         public void PublishMarketData(MarketData newData)
         {
-            MarketDataChangeEvent(this, newData);
+            if (MarketDataChangeEvent != null)
+            {
+                MarketDataChangeEvent(this, newData);
+            }
         }
 
         //This event handler runs when a PriceChange event is raised.

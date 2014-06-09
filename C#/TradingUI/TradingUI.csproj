@@ -71,9 +71,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\ConfigureData.cs" />
-    <Compile Include="Model\OptionData.cs" />
+    <Compile Include="Model\OptionDataGrid.cs" />
     <Compile Include="Model\PortfolioData.cs" />
+    <Compile Include="Model\Receiver.cs" />
     <Compile Include="Model\WarningLabel.cs" />
+    <Compile Include="Service References\PricerServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\ChartViewModel.cs" />
     <Compile Include="ViewModels\AddOptionViewModel.cs" />
     <Compile Include="ViewModels\ConfigureMarketViewModel.cs" />
@@ -81,7 +87,6 @@
     <Compile Include="ViewModels\PortfolioViewModel.cs" />
     <Compile Include="ViewModels\MarketViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="Model\Questionnaire.cs" />
     <Compile Include="Views\AddOption.xaml.cs">
       <DependentUpon>AddOption.xaml</DependentUpon>
     </Compile>
@@ -172,6 +177,20 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\PricerServiceReference\item.wsdl" />
+    <None Include="Service References\PricerServiceReference\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PricerServiceReference\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PricerServiceReference\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PricerServiceReference\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PricerServiceReference\PricerService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -185,6 +204,30 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PricerServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PricerServiceReference\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PricerServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PricerServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PricerServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CS.Core\CS.Core.csproj">
+      <Project>{35a8e4fd-6e04-475e-9d7d-7f452fd6f362}</Project>
+      <Name>CS.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

@@ -13,7 +13,7 @@ namespace TradingUI.ViewModels
 {
     public class TradeOptionViewModel : BindableBase
     {
-        public OptionData selectedOption { get; set; }
+        public OptionDataGrid selectedOption { get; set; }
         public BindingList<PortfolioData> portfolioList { get; set; }
 
         public event Action RequestClose;
@@ -27,7 +27,7 @@ namespace TradingUI.ViewModels
         public bool SellButton { get; set; }
         public string notionalTextbox { get; set; }
 
-        public TradeOptionViewModel(BindingList<PortfolioData> portfolioList, OptionData selectedOption)
+        public TradeOptionViewModel(BindingList<PortfolioData> portfolioList, OptionDataGrid selectedOption)
         {
             this.TradeOptionCommand = new DelegateCommand<object>(this.TradeOption);
             this.CloseWindowCommand = new DelegateCommand<object>(this.Close);

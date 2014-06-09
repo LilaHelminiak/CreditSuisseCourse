@@ -38,3 +38,5 @@ D:\Plugg\CS_CSharp\C#\TradingUI\obj\Debug\TradingUI.Properties.Resources.resourc
 D:\Plugg\CS_CSharp\C#\TradingUI\obj\Debug\TradingUI.csproj.GenerateResource.Cache
 D:\Plugg\CS_CSharp\C#\TradingUI\obj\Debug\TradingUI.exe
 D:\Plugg\CS_CSharp\C#\TradingUI\obj\Debug\TradingUI.pdb
+D:\Plugg\CS_CSharp\C#\TradingUI\bin\Debug\CS.Core.dll
+D:\Plugg\CS_CSharp\C#\TradingUI\bin\Debug\CS.Core.pdb

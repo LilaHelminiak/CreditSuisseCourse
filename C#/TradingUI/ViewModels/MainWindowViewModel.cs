@@ -6,15 +6,23 @@ using System.Text;
 using System.Windows.Input;
 using TradingUI.Model;
 using Microsoft.Practices.Prism.Commands;
+using System.Threading.Tasks;
+using System;
 
 namespace TradingUI.ViewModels
 {
     public class MainWindowViewModel
     {
         public BindingList<PortfolioData> portfolioData;
+        public Receiver dataReceiver;
         public MainWindowViewModel()
         {
-            this.MarketViewModel = new MarketViewModel(portfolioData);
+            portfolioData = new BindingList<PortfolioData>();
+            dataReceiver = new Receiver();
+            Task task1 = new Task(new Action(Receiver.SubscribeToService));
+            task1.Start();
+
+            this.MarketViewModel = new MarketViewModel(portfolioData, dataReceiver);
             this.PortfolioViewModel = new PortfolioViewModel();
             this.ChartViewModel = new ChartViewModel();            
         }

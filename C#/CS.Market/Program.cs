@@ -2,10 +2,11 @@
 using System.ServiceModel;
 using System.Linq;
 using CS.Market.MarketServiceReference;
+using System.Threading;
 
 namespace CS.Market
 {
-    class MarketPublisher
+    class MarketPublisher: IMarketContractCallback
     {
         static void Main(string[] args)
         {
@@ -26,15 +27,22 @@ namespace CS.Market
                 marketData.Time = DateTime.Parse("2015-02-13");
                 marketData.StockPrice = 1000;
 
-                //Publish MarketData
-                Console.WriteLine("Sending PublishMarketData(marketData)");
-                publisher.PublishMarketData(marketData);
+                //Publish MarketData                
+                while(true)
+                {
+                    Console.WriteLine("Hit enter to PublishMarketData(marketData)");
+                    Console.ReadKey();
+                    publisher.PublishMarketData(marketData);
 
-                
+                }                
                 Console.WriteLine("Press <Enter> to stop the service");
                 Console.ReadKey();
                 host.Close();
             }
+        }
+
+        public void GetMarketData(MarketData marketdata)
+        {
         }
     }
 }

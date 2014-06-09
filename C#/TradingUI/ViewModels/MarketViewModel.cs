@@ -14,28 +14,31 @@ namespace TradingUI.ViewModels
 {
     public class MarketViewModel : BindableBase
     {
-        public BindingList<OptionData> optionList { get; set; }
+        public BindingList<OptionDataGrid> optionList { get; set; }
         public BindingList<PortfolioData> portfolioList { get; set; }
 
-        public OptionData selectedOption { get; set; }
-        //public MarketData Market { get; set; }
+        public OptionDataGrid selectedOption { get; set; }
+        public Receiver dataReceiver { get; set; }
 
         public ICommand AddOptionCommand { get; set; }
         public ICommand TradeOptionCommand { get; set; }
         public ICommand ConfigureMarketCommand { get; set; }
 
-        public MarketViewModel(BindingList<PortfolioData> portfolioList)
+        public MarketViewModel(BindingList<PortfolioData> portfolioList, Receiver dataReceiver)
         {
             this.portfolioList = portfolioList;
-            optionList = new BindingList<OptionData>();
+            optionList = new BindingList<OptionDataGrid>();
             //test
-            var t = new OptionData();
+            var t = new OptionDataGrid();
             t.Maturity = DateTime.Parse("2015-09-18");
             t.Price = 100;
             t.Type = "Put";
             optionList.Add(t);
             //end-test
             //this.Market = new MarketData();
+
+            this.dataReceiver = dataReceiver;
+
             this.AddOptionCommand = new DelegateCommand<object>(this.ShowAddOptionDialog);
             this.TradeOptionCommand = new DelegateCommand<object>(this.ShowTradeOptionDialog);
             this.ConfigureMarketCommand = new DelegateCommand<object>(this.ShowConfigureMarketDialog);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using CS.Market;
 
 namespace CS.Trades.TradeTypes
@@ -59,6 +60,7 @@ namespace CS.Trades.TradeTypes
     /// <summary>
     /// Class OptionContract models the contract for Option.
     /// </summary>
+    [DataContract]
     public sealed class OptionContract
     {
         /// <summary>
@@ -73,6 +75,7 @@ namespace CS.Trades.TradeTypes
         /// Gets the type of the option.
         /// </summary>
         /// <value>The type of the option.</value>
+        [DataMember]
         public Type OptionType { get; private set; }
 
 
@@ -80,6 +83,7 @@ namespace CS.Trades.TradeTypes
         /// Gets the base notional.
         /// </summary>
         /// <value>The base notional.</value>
+        [DataMember]
         public double BaseNotional { get; private set; }
 
 
@@ -87,6 +91,7 @@ namespace CS.Trades.TradeTypes
         /// Gets the strike.
         /// </summary>
         /// <value>The strike.</value>
+        [DataMember]
         public double Strike { get; private set; }
 
 
@@ -94,6 +99,7 @@ namespace CS.Trades.TradeTypes
         /// Gets the maturity.
         /// </summary>
         /// <value>The maturity.</value>
+        [DataMember]
         public DateTime Maturity { get; private set; }
 
         /// <summary>

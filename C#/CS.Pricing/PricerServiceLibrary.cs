@@ -22,7 +22,7 @@ namespace CS.Pricing
     public interface IPricerClientContract
     {
         [OperationContract(IsOneWay = true)]
-        void GetMarketData(OptionData newData);
+        void GetPricerData(OptionData newData);
     }
 
 
@@ -60,7 +60,10 @@ namespace CS.Pricing
 
         public void PublishUIData(OptionData optionData)
         {
-            PricerDataChangeEvent(this, optionData);
+            if (PricerDataChangeEvent != null)
+            {
+                PricerDataChangeEvent(this, optionData);
+            }
         }
 
         //This event handler runs when a PriceChange event is raised.
@@ -68,7 +71,7 @@ namespace CS.Pricing
 
         public void PricerChangeHandler(object sender, OptionData optionData)
         {
-            callback.GetMarketData(optionData);
+            callback.GetPricerData(optionData);
         }
 
     }
