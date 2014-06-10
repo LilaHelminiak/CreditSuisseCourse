@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 using CS.Market;
 using CS.Pricing;
 using CS.Trades.TradeTypes;
@@ -49,6 +51,7 @@ namespace TradingUI.Model
             client = new PricerContractClient(site);
 
             this.optionList = new List<OptionDataGrid>() {new OptionDataGrid(){OptionType="Put", Maturity=DateTime.Now, Price=20}};
+
             //create a unique callback address so multiple clients can run on one machine
             WSDualHttpBinding binding = (WSDualHttpBinding)client.Endpoint.Binding;
             string clientcallbackaddress = binding.ClientBaseAddress.AbsoluteUri;
@@ -95,6 +98,7 @@ namespace TradingUI.Model
         public void GetPricerData(OptionData newOptionData)
         {            
             MarketData = newOptionData.MarketData;
+
             var tempOptionList = new List<OptionDataGrid>();
             foreach (var option in newOptionData.OptionResults)
             {

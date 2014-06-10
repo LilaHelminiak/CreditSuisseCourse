@@ -10,6 +10,7 @@ using TradingUI.Views;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace TradingUI.ViewModels
 {
@@ -18,23 +19,33 @@ namespace TradingUI.ViewModels
         public BindingList<OptionDataGrid> optionList { get; set; }
         public BindingList<PortfolioData> portfolioList { get; set; }
 
+  
+
+        private ObservableCollection<KeyValuePair<String, double>> _chartData;
+        public ObservableCollection<KeyValuePair<String, double>> chartData
+        {
+            get { return _chartData; }
+            set { 
+                _chartData = value;
+                OnPropertyChanged("chartData");
+            }
+        }
+
         public OptionDataGrid selectedOption { get; set; }
         public Receiver dataReceiver { get; set; }
 
         public ICommand AddOptionCommand { get; set; }
         public ICommand TradeOptionCommand { get; set; }
-        public ICommand ConfigureMarketCommand { get; set; }
 
         public MarketViewModel(BindingList<PortfolioData> portfolioList, Receiver dataReceiver)
         {
             this.portfolioList = portfolioList;
             optionList = new BindingList<OptionDataGrid>();
-
+            _chartData = new ObservableCollection<KeyValuePair<string, double>>();
+            _chartData.Add(new KeyValuePair<String, double>("2014-06-10", 121));
             this.dataReceiver = dataReceiver;
             this.AddOptionCommand = new DelegateCommand<object>(this.ShowAddOptionDialog);
             this.TradeOptionCommand = new DelegateCommand<object>(this.ShowTradeOptionDialog);
-            this.ConfigureMarketCommand = new DelegateCommand<object>(this.ShowConfigureMarketDialog);
-
 
         }
 
@@ -47,14 +58,6 @@ namespace TradingUI.ViewModels
             newWindow.Show();
         }
 
-        public void ShowConfigureMarketDialog(object obj)
-        {            
-            var newWindow = new ConfigureMarket();
-            var viewModel = new ConfigureMarketViewModel();
-            viewModel.RequestClose += newWindow.Close;
-            newWindow.DataContext = viewModel;
-            newWindow.Show();
-        }
 
         public void ShowTradeOptionDialog(object obj)
         {

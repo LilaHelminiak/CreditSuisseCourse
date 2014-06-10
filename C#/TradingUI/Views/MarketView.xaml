@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit" 
+             xmlns:datavis="clr-namespace:System.Windows.Controls.DataVisualization;assembly=‌​System.Windows.Controls.DataVisualization.Toolkit"
              mc:Ignorable="d"
              d:DesignHeight="500"
              d:DesignWidth="400">
@@ -15,13 +17,19 @@
                     <RowDefinition Height="24" />
                 </Grid.RowDefinitions>
                 <Label Name="MarketPrice" Content="Strike: " Grid.Row="0" />
-                <Label Name="MarketPriceValue"  Content="{Binding dataReceiver.MarketData.StockPrice}" Grid.Row="0" Margin="35,0,0,0"/>
+                <Label Name="MarketPriceValue"  Content="{Binding dataReceiver.MarketData.StockPrice}" ContentStringFormat="00.00" Grid.Row="0" Margin="35,0,0,0"/>
                 <Label Name="MarketVol" Content="Volatility: " Grid.Row="0" HorizontalAlignment="Center" Margin="-40,0,0,0"/>
-                <Label Name="MarketVolValue" Content="{Binding dataReceiver.MarketData.VolSurface}" Grid.Row="0" HorizontalAlignment="Center" Margin="40,0,0,0"/>
+                <Label Name="MarketVolValue" Content="{Binding dataReceiver.MarketData.VolSurface.Volatility}" Grid.Row="0" HorizontalAlignment="Center" Margin="30,0,0,0"/>
                 <Label Name="MarketDate" Content="Date: " Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,60,0"/>
                 <Label Name="MarketDateValue"  Content="{Binding dataReceiver.MarketData.Time}" ContentStringFormat="yyyy-MM-dd" Grid.Row="0" HorizontalAlignment="Right" />
-                    <Button Command="{Binding ConfigureMarketCommand}" Grid.Row="0" Grid.Column="0" Height="25" Width="110" Content="Configure Market" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,25,0,0"></Button>
-                <Image Source="../Images/marketChart.jpg" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+
+                <chartingToolkit:Chart HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <chartingToolkit:LineSeries DependentValuePath="Value" 
+                                                  IndependentValuePath="Key" 
+                                                  ItemsSource="{Binding Path=dataReceiver.chartData}"
+                                                  Title="Strike"/>
+                </chartingToolkit:Chart>
+
                 <DataGrid Name="optionDataGrid" 
                           ItemsSource="{Binding dataReceiver.optionList}" SelectedItem="{Binding selectedOption}"
                           AutoGenerateColumns="False"  IsReadOnly="True" Grid.Row="1" Margin="10,10,10,10">

@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace CS.Market
 {
     /// <summary>
     /// Class FlatVolSurface models the flat volatility surface.
     /// </summary>
+    [DataContract]
     public class FlatVolSurface : IVolSurface
     {
         public FlatVolSurface(double vol)
@@ -26,7 +28,7 @@ namespace CS.Market
                 throw new Exception("Implied volatility can only be queried for future times.");
             return Volatility;
         }
-
+        [DataMember]
         public double Volatility { get; set; }
     }
 }

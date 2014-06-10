@@ -25,8 +25,6 @@ namespace CS.Market
         void GetMarketData(MarketData newData);
     }
 
-
-
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
     public class MarketService : IMarketContract
     {
@@ -37,9 +35,6 @@ namespace CS.Market
 
         MarketDataChangeEventHandler marketChangeHandler = null;
 
-        //Clients call this service operation to subscribe.
-        //A price change event handler is registered for this client instance.
-
         public void Subscribe()
         {
             callback = OperationContext.Current.GetCallbackChannel<IMarketClientContract>();
@@ -47,16 +42,10 @@ namespace CS.Market
             MarketDataChangeEvent += marketChangeHandler;
         }
 
-        //Clients call this service operation to unsubscribe.
-        //The previous price change event handler is deregistered.
-
         public void Unsubscribe()
         {
             MarketDataChangeEvent -= marketChangeHandler;
         }
-
-        //Information source clients call this service operation to report a price change.
-        //A price change event is raised. The price change event handlers for each subscriber will execute.
 
         public void PublishMarketData(MarketData newData)
         {
@@ -65,9 +54,6 @@ namespace CS.Market
                 MarketDataChangeEvent(this, newData);
             }
         }
-
-        //This event handler runs when a PriceChange event is raised.
-        //The client's PriceChange service operation is invoked to provide notification about the price change.
 
         public void MarketChangeHandler(object sender, MarketData newData)
         {

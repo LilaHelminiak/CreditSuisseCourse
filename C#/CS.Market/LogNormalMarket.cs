@@ -40,7 +40,7 @@ namespace CS.Market
         /// Gets the volatility surface for stock.
         /// </summary>
         /// <value>The volatility surface.</value>
-        public IVolSurface VolSurface { get; private set; }
+        public FlatVolSurface VolSurface { get; private set; }
 
         /// <summary>
         /// Evolves the specified time.

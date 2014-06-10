@@ -70,7 +70,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\ConfigureData.cs" />
     <Compile Include="Model\OptionDataGrid.cs" />
     <Compile Include="Model\PortfolioData.cs" />
     <Compile Include="Model\Receiver.cs" />
@@ -82,7 +81,6 @@
     </Compile>
     <Compile Include="ViewModels\ChartViewModel.cs" />
     <Compile Include="ViewModels\AddOptionViewModel.cs" />
-    <Compile Include="ViewModels\ConfigureMarketViewModel.cs" />
     <Compile Include="ViewModels\TradeOptionViewModel.cs" />
     <Compile Include="ViewModels\PortfolioViewModel.cs" />
     <Compile Include="ViewModels\MarketViewModel.cs" />
@@ -92,9 +90,6 @@
     </Compile>
     <Compile Include="Views\ChartView.xaml.cs">
       <DependentUpon>ChartView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ConfigureMarket.xaml.cs">
-      <DependentUpon>ConfigureMarket.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PortfolioView.xaml.cs">
       <DependentUpon>PortfolioView.xaml</DependentUpon>
@@ -115,10 +110,6 @@
     <Page Include="Views\ChartView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\ConfigureMarket.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PortfolioView.xaml">
       <Generator>MSBuild:Compile</Generator>

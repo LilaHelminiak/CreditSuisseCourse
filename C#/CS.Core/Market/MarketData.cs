@@ -26,6 +26,6 @@ namespace CS.Market
         /// </summary>
         /// <value>The volatility surface.</value>
         [DataMember]
-        public IVolSurface VolSurface { get; set; }
+        public FlatVolSurface VolSurface { get; set; }
     }
 }
