@@ -5,7 +5,7 @@ namespace TradingUI.Model
     /// <summary>
     /// Class OptionData.
     /// </summary>
-    public class OptionDataGrid 
+    /*public class OptionDataGrid 
     {
         /// <summary>
         /// Gets the type of the option
@@ -23,5 +23,5 @@ namespace TradingUI.Model
         /// <value>The stock price.</value>
         public double Price { get; set; }
 
-    }
+    }*/
 }

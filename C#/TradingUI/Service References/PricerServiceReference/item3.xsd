@@ -4,8 +4,14 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="StockPrice" type="xs:double" />
       <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="VolSurface" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="VolSurface" nillable="true" type="tns:FlatVolSurface" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MarketData" nillable="true" type="tns:MarketData" />
+  <xs:complexType name="FlatVolSurface">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Volatility" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlatVolSurface" nillable="true" type="tns:FlatVolSurface" />
 </xs:schema>

@@ -28,12 +28,6 @@ namespace TradingUI.PricerServiceReference {
         System.Threading.Tasks.Task UnsubscribeAsync();
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="PricerServiceLibrary/IPricerContract/PublishUIData")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Pricing.OptionResult[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Pricing.OptionResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Pricing.Result))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract.Type))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract[]))]
         void PublishUIData(CS.Pricing.OptionData optionData);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="PricerServiceLibrary/IPricerContract/PublishUIData")]
@@ -56,12 +50,6 @@ namespace TradingUI.PricerServiceReference {
     public interface IPricerContractCallback {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="PricerServiceLibrary/IPricerContract/GetPricerData")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Pricing.OptionResult[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Pricing.OptionResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Pricing.Result))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract.Type))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract[]))]
         void GetPricerData(CS.Pricing.OptionData newData);
     }
     

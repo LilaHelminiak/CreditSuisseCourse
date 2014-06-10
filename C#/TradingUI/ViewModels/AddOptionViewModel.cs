@@ -10,12 +10,12 @@ using Microsoft.Practices.Prism.Mvvm;
 using System.Windows;
 using System.ComponentModel;
 using CS.Trades.TradeTypes;
+using CS.Pricing;
 
 namespace TradingUI.ViewModels
 {
     public class AddOptionViewModel : BindableBase
     {
-        BindingList<OptionDataGrid> optionList;
         public Receiver dataReceiver;
 
         public event Action RequestClose;
@@ -32,14 +32,13 @@ namespace TradingUI.ViewModels
         public DateTime? maturityDate { get; set; }
         public string priceTextbox { get; set; }
 
-        public AddOptionViewModel(BindingList<OptionDataGrid> optionList, Receiver dataReceiver)
+        public AddOptionViewModel(Receiver dataReceiver)
         {
             this.dataReceiver = dataReceiver;
 
             this.AddOptionCommand = new DelegateCommand<object>(this.AddOption);
             this.CloseWindowCommand = new DelegateCommand<object>(this.Close);
 
-            this.optionList = optionList;
             this.typeWarningLabel = new WarningLabel();
             this.priceWarningLabel = new WarningLabel();
             this.dateWarningLabel = new WarningLabel();
@@ -56,8 +55,6 @@ namespace TradingUI.ViewModels
 
         public void AddOption(object obj)
         {
-            var option = new OptionContract();
-            var newOption = new OptionDataGrid();
             bool correctOption;
 
             typeWarningLabel.Visibility = Visibility.Hidden;
@@ -65,34 +62,35 @@ namespace TradingUI.ViewModels
             dateWarningLabel.Visibility = Visibility.Hidden;
             existWarningLabel.Visibility = Visibility.Hidden;
 
-            correctOption = CheckButtons(newOption);
-            correctOption = CheckPrice(newOption) && correctOption;
-            correctOption = CheckDate(newOption) && correctOption;
-            correctOption = CheckExist(newOption) && correctOption;            
+            correctOption = CheckButtons();
+            correctOption = CheckPrice() && correctOption;
+            correctOption = CheckDate() && correctOption;
+          
 
             if (correctOption)
             {
                 OptionContract.Type optionType;
-                Enum.TryParse(newOption.OptionType, out optionType);
-                option = new OptionContract(optionType, 1, newOption.Price, newOption.Maturity);
-                dataReceiver.AddOptionToPricer(option);
-                optionList.Add(newOption);
+                if(PutButton)
+                    optionType = OptionContract.Type.Put;
+                else 
+                    optionType = OptionContract.Type.Call;
+                double Strike = Convert.ToDouble(priceTextbox);   
+                DateTime Maturity = (DateTime)maturityDate;
+
+                OptionContract optionContract = new OptionContract(optionType, 1, Strike, Maturity);
+                if(CheckExist(optionContract))
+                    dataReceiver.AddOptionToPricer(optionContract);
+
                 this.Close(obj);
             }
         }
 
 
 
-        private bool CheckButtons(OptionDataGrid newOption)
+        private bool CheckButtons()
         {
-            if (PutButton)
+            if (PutButton || CallButton)
             {
-                newOption.OptionType = "Put";
-                return true;
-            }
-            else if (CallButton)
-            {
-                newOption.OptionType = "Call";
                 return true;
             }
             else
@@ -103,8 +101,9 @@ namespace TradingUI.ViewModels
             }
         }
 
-        private bool CheckPrice(OptionDataGrid newOption)
+        private bool CheckPrice()
         {
+            double price;
             if (String.IsNullOrEmpty(priceTextbox))
             {
                 priceWarningLabel.Visibility = Visibility.Visible;
@@ -113,9 +112,10 @@ namespace TradingUI.ViewModels
             }
             else
             {
+                
                 try
                 {
-                    newOption.Price = Convert.ToDouble(priceTextbox);                    
+                    price = Convert.ToDouble(priceTextbox);                    
                 }
                 catch (FormatException)
                 {
@@ -124,7 +124,7 @@ namespace TradingUI.ViewModels
                     return false;
                 }
             }
-            if (newOption.Price < 0)
+            if (price < 0)
             {
                 priceWarningLabel.Visibility = Visibility.Visible;
                 priceWarningLabel.Content = "The price can not be negative";
@@ -134,7 +134,7 @@ namespace TradingUI.ViewModels
                 return true;
         }
 
-        private bool CheckDate(OptionDataGrid newOption)
+        private bool CheckDate()
         {
             if( maturityDate == null)
             {
@@ -150,15 +150,13 @@ namespace TradingUI.ViewModels
                 return false;
             }
             else
-            {
-                newOption.Maturity = (DateTime)maturityDate;
                 return true;
-            }
         }      
         
-        private bool CheckExist(OptionDataGrid newOption)
+        private bool CheckExist(OptionContract newOption)
         {
-            var result = optionList.FirstOrDefault(option => option.OptionType == newOption.OptionType && option.Price == newOption.Price && option.Maturity == newOption.Maturity);
+            var optionList = dataReceiver.GetAllOptions();
+            var result = optionList.FirstOrDefault(option => option.OptionType == newOption.OptionType && option.Strike == newOption.Strike && option.Maturity == newOption.Maturity);
             if (result == null)
                 return true;
             else

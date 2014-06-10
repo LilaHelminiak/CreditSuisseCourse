@@ -34,8 +34,8 @@ namespace TradingUI.Model
             }
         }
 
-        public List<OptionDataGrid> _optionList;
-        public List<OptionDataGrid> optionList {
+        public List<OptionResult> _optionList;
+        public List<OptionResult> optionList {
             get
             {
                 return _optionList;
@@ -63,7 +63,7 @@ namespace TradingUI.Model
             InstanceContext site = new InstanceContext(null, this);
             client = new PricerContractClient(site);
 
-            this.optionList = new List<OptionDataGrid>() {new OptionDataGrid(){OptionType="Put", Maturity=DateTime.Now, Price=20}};
+            this.optionList = new List<OptionResult>() {new OptionResult(){Contract = new OptionContract(OptionContract.Type.Put, 1, 1300, DateTime.Parse("2015-05-14"))}};
             _chartData = new ObservableCollection<KeyValuePair<string, double>>();
             chartCounter = 0;
             //create a unique callback address so multiple clients can run on one machine
@@ -108,6 +108,11 @@ namespace TradingUI.Model
             client.AddNewOption(option);
         }
 
+        public List<OptionContract> GetAllOptions()
+        {
+            return client.GetAllOptions().ToList();
+        }
+
 
         public void GetPricerData(OptionData newOptionData)
         {            
@@ -121,17 +126,9 @@ namespace TradingUI.Model
                         _chartData.Add(new KeyValuePair<string, double>("t" + chartCounter.ToString(), MarketData.StockPrice)); }
                     ));
             
-            var tempOptionList = new List<OptionDataGrid>();
-            foreach (var option in newOptionData.OptionResults)
-            {
-                tempOptionList.Add(new OptionDataGrid() 
-                { 
-                    Price = option.Contract.Strike, 
-                    Maturity = option.Contract.Maturity, 
-                    OptionType =  option.Contract.OptionType.ToString()
-                });
-            }
-            optionList = tempOptionList;
+            //var tempOptionList = new List<OptionResult>();
+  
+            optionList = newOptionData.OptionResults.ToList();
         }
     }
 }

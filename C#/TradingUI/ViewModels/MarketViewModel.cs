@@ -11,15 +11,14 @@ using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using CS.Pricing;
 
 namespace TradingUI.ViewModels
 {
     public class MarketViewModel : BindableBase
     {
-        public BindingList<OptionDataGrid> optionList { get; set; }
-        public BindingList<PortfolioData> portfolioList { get; set; }
 
-  
+        public BindingList<PortfolioData> portfolioList { get; set; } 
 
         private ObservableCollection<KeyValuePair<String, double>> _chartData;
         public ObservableCollection<KeyValuePair<String, double>> chartData
@@ -31,8 +30,8 @@ namespace TradingUI.ViewModels
             }
         }
 
-        public OptionDataGrid _selectedOption;
-        public OptionDataGrid selectedOption {
+        public OptionResult _selectedOption;
+        public OptionResult selectedOption {
             get { return _selectedOption; }
             set
             {
@@ -42,7 +41,7 @@ namespace TradingUI.ViewModels
                     lastSelectedOption = _selectedOption;
             }
         }
-        public OptionDataGrid lastSelectedOption;
+        public OptionResult lastSelectedOption;
         public Receiver dataReceiver { get; set; }
 
         public ICommand AddOptionCommand { get; set; }
@@ -51,7 +50,6 @@ namespace TradingUI.ViewModels
         public MarketViewModel(BindingList<PortfolioData> portfolioList, Receiver dataReceiver)
         {
             this.portfolioList = portfolioList;
-            optionList = new BindingList<OptionDataGrid>();
             _chartData = new ObservableCollection<KeyValuePair<string, double>>();
             _chartData.Add(new KeyValuePair<String, double>("2014-06-10", 121));
             this.dataReceiver = dataReceiver;
@@ -63,7 +61,7 @@ namespace TradingUI.ViewModels
         public void ShowAddOptionDialog(object obj)
         {
             var newWindow = new AddOption();
-            var viewModel = new AddOptionViewModel(optionList, dataReceiver);
+            var viewModel = new AddOptionViewModel(dataReceiver);
             viewModel.RequestClose += newWindow.Close;
             newWindow.DataContext = viewModel;
             newWindow.Show();

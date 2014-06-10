@@ -34,9 +34,9 @@
                           ItemsSource="{Binding dataReceiver.optionList}" SelectedItem="{Binding selectedOption}"
                           AutoGenerateColumns="False"  IsReadOnly="True" Grid.Row="1" Margin="10,10,10,10">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Type" Binding="{Binding OptionType}" Width="25*" />
-                        <DataGridTextColumn  Header="Maturity" Binding="{Binding Maturity, StringFormat='yyyy-MM-dd'}" Width="25*" />
-                        <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="25*" />
+                        <DataGridTextColumn Header="Type" Binding="{Binding Contract.OptionType}" Width="25*" />
+                        <DataGridTextColumn  Header="Maturity" Binding="{Binding Contract.Maturity, StringFormat='yyyy-MM-dd'}" Width="25*" />
+                        <DataGridTextColumn Header="Strike" Binding="{Binding Contract.Strike}" Width="25*" />
                     </DataGrid.Columns>
                 </DataGrid>
                 <Button Grid.Row="3" Command="{Binding AddOptionCommand}" Width="140" Margin="-160,0,2,0" HorizontalAlignment="Center">Add new option</Button>

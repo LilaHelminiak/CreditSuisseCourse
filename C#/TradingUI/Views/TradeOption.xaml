@@ -27,10 +27,10 @@
         <Label Grid.Column="0" Grid.Row="6"  HorizontalAlignment="Right">Amount:</Label>
         <Label Grid.Column="0" Grid.Row="7"  HorizontalAlignment="Right">Trade direction:</Label>
 
-        <Label Name="typeLabel" Content="{Binding selectedOption.Type}" Grid.Column="1" Grid.Row="1" />
-        <Label Name="priceLabel" Content="{Binding selectedOption.Price}" Grid.Column="1" Grid.Row="2" />
-        <Label Name="dateLabel" Content="{Binding selectedOption.Maturity}" ContentStringFormat="yyyy-MM-dd" Grid.Column="1" Grid.Row="3" />
-        <Label Name="volLabel" Content="{Binding Market.Volatility}" Grid.Column="1" Grid.Row="4" />
+        <Label Name="typeLabel" Content="{Binding selectedOption.Contract.OptionType}" Grid.Column="1" Grid.Row="1" />
+        <Label Name="priceLabel" Content="{Binding selectedOption.Contract.Strike}" Grid.Column="1" Grid.Row="2" />
+        <Label Name="dateLabel" Content="{Binding selectedOption.Contract.Maturity}" ContentStringFormat="yyyy-MM-dd" Grid.Column="1" Grid.Row="3" />
+        <Label Name="volLabel" Content="{Binding dataReceiver.MarketData.Volatility}" Grid.Column="1" Grid.Row="4" />
         <Label Name="delLabel" Content="{Binding selectedOption.Delta}" Grid.Column="1" Grid.Row="5" />
         <TextBox Name="AmountBox"  Text="{Binding notional}" Grid.Column="1" Grid.Row="6" Margin="10,-20,10,0" Height="20" ></TextBox>
         <Label Name="AmountWarning" Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="6"  Foreground="Red" Visibility="Hidden" HorizontalAlignment="Center" Margin="10,23,0,0" />

@@ -15,11 +15,13 @@ namespace CS.Pricing
         /// </summary>
         /// <param name="contract">The contract.</param>
         /// <param name="result">The result.</param>
-        /*public OptionResult(OptionContract contract, Result result)
+        public OptionResult(OptionContract contract, Result result)
         {
             Contract = contract;
             BaseResult = result;
-        }*/
+        }
+        public OptionResult()
+        { }
 
         /// <summary>
         /// Gets or sets the contract.

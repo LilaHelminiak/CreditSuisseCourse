@@ -8,12 +8,14 @@ using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
 using System.Windows;
 using System.ComponentModel;
+using CS.Trades.TradeTypes;
+using CS.Pricing;
 
 namespace TradingUI.ViewModels
 {
     public class TradeOptionViewModel : BindableBase
     {
-        public OptionDataGrid selectedOption { get; set; }
+        public OptionResult selectedOption { get; set; }
         public BindingList<PortfolioData> portfolioList { get; set; }
 
         public event Action RequestClose;
@@ -27,7 +29,7 @@ namespace TradingUI.ViewModels
         public bool SellButton { get; set; }
         public string notionalTextbox { get; set; }
 
-        public TradeOptionViewModel(BindingList<PortfolioData> portfolioList, OptionDataGrid selectedOption)
+        public TradeOptionViewModel(BindingList<PortfolioData> portfolioList, OptionResult selectedOption)
         {
             this.TradeOptionCommand = new DelegateCommand<object>(this.TradeOption);
             this.CloseWindowCommand = new DelegateCommand<object>(this.Close);

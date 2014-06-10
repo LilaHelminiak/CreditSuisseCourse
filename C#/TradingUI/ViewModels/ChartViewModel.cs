@@ -21,7 +21,7 @@ namespace TradingUI.ViewModels
         {
             _data = new ObservableCollection<KeyValuePair<int, int>>();
 
-            _data.Add(new KeyValuePair<int, int>(0, 0));
+            //_data.Add(new KeyValuePair<int, int>(0, 0));
             _data.Add(new KeyValuePair<int, int>(10, 50));
             _data.Add(new KeyValuePair<int, int>(4, 11));
         }
