@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
@@ -20,6 +21,18 @@ namespace TradingUI.Model
     {
         private PricerContractClient client;
         public event PropertyChangedEventHandler PropertyChanged;
+
+        private int chartCounter;
+        static private ObservableCollection<KeyValuePair<String, double>> _chartData;
+        public ObservableCollection<KeyValuePair<String, double>> chartData
+        {
+            get { return _chartData; }
+            set
+            {
+                _chartData = value;
+                OnPropertyChanged("chartData");
+            }
+        }
 
         public List<OptionDataGrid> _optionList;
         public List<OptionDataGrid> optionList {
@@ -51,7 +64,8 @@ namespace TradingUI.Model
             client = new PricerContractClient(site);
 
             this.optionList = new List<OptionDataGrid>() {new OptionDataGrid(){OptionType="Put", Maturity=DateTime.Now, Price=20}};
-
+            _chartData = new ObservableCollection<KeyValuePair<string, double>>();
+            chartCounter = 0;
             //create a unique callback address so multiple clients can run on one machine
             WSDualHttpBinding binding = (WSDualHttpBinding)client.Endpoint.Binding;
             string clientcallbackaddress = binding.ClientBaseAddress.AbsoluteUri;
@@ -98,7 +112,15 @@ namespace TradingUI.Model
         public void GetPricerData(OptionData newOptionData)
         {            
             MarketData = newOptionData.MarketData;
-
+            Application.Current.Dispatcher.BeginInvoke(
+                DispatcherPriority.Background, new Action(() =>
+                    {
+                        if (_chartData.Count == 50)
+                            _chartData.RemoveAt(0);
+                        chartCounter += 1;
+                        _chartData.Add(new KeyValuePair<string, double>("t" + chartCounter.ToString(), MarketData.StockPrice)); }
+                    ));
+            
             var tempOptionList = new List<OptionDataGrid>();
             foreach (var option in newOptionData.OptionResults)
             {
