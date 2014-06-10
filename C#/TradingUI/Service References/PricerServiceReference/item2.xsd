@@ -41,10 +41,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllOptions">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllOptionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CS.Trades.TradeTypes" minOccurs="0" name="GetAllOptionsResult" nillable="true" type="q3:ArrayOfOptionContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetPricerData">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CS.Pricing" minOccurs="0" name="newData" nillable="true" type="q3:OptionData" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CS.Pricing" minOccurs="0" name="newData" nillable="true" type="q4:OptionData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

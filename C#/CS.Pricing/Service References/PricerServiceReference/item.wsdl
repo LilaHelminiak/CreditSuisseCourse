@@ -30,6 +30,12 @@
   <wsdl:message name="IPricerContract_AddNewOption_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddNewOptionResponse" />
   </wsdl:message>
+  <wsdl:message name="IPricerContract_GetAllOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOptions" />
+  </wsdl:message>
+  <wsdl:message name="IPricerContract_GetAllOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOptionsResponse" />
+  </wsdl:message>
   <wsdl:message name="IPricerContract_GetPricerData_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GetPricerData" />
   </wsdl:message>
@@ -45,9 +51,13 @@
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PublishUIData">
       <wsdl:input wsam:Action="PricerServiceLibrary/IPricerContract/PublishUIData" message="tns:IPricerContract_PublishUIData_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation msc:isInitiating="true" msc:isTerminating="true" name="AddNewOption">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AddNewOption">
       <wsdl:input wsam:Action="PricerServiceLibrary/IPricerContract/AddNewOption" message="tns:IPricerContract_AddNewOption_InputMessage" />
       <wsdl:output wsam:Action="PricerServiceLibrary/IPricerContract/AddNewOptionResponse" message="tns:IPricerContract_AddNewOption_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllOptions">
+      <wsdl:input wsam:Action="PricerServiceLibrary/IPricerContract/GetAllOptions" message="tns:IPricerContract_GetAllOptions_InputMessage" />
+      <wsdl:output wsam:Action="PricerServiceLibrary/IPricerContract/GetAllOptionsResponse" message="tns:IPricerContract_GetAllOptions_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetPricerData">
       <wsdl:output wsam:Action="PricerServiceLibrary/IPricerContract/GetPricerData" message="tns:IPricerContract_GetPricerData_OutputCallbackMessage" />

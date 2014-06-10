@@ -6,12 +6,12 @@ namespace TradingUI.Model
     /// Class OptionData.
     /// </summary>
     public class OptionDataGrid 
-    {        
+    {
         /// <summary>
         /// Gets the type of the option
         /// </summary>
         /// <value>The type</value>
-        public string Type { get; set; }
+        public string OptionType { get; set; }
         /// <summary>
         /// Gets the time of market data.
         /// </summary>

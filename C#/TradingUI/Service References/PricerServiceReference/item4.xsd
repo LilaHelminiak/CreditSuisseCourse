@@ -16,4 +16,10 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="OptionContract.Type" nillable="true" type="tns:OptionContract.Type" />
+  <xs:complexType name="ArrayOfOptionContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OptionContract" nillable="true" type="tns:OptionContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOptionContract" nillable="true" type="tns:ArrayOfOptionContract" />
 </xs:schema>

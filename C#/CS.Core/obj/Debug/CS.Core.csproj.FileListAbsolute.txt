@@ -6,4 +6,3 @@ D:\Plugg\CS_CSharp\C#\CS.Core\bin\Debug\CS.Core.dll
 D:\Plugg\CS_CSharp\C#\CS.Core\bin\Debug\CS.Core.pdb
 D:\Plugg\CS_CSharp\C#\CS.Core\obj\Debug\CS.Core.dll
 D:\Plugg\CS_CSharp\C#\CS.Core\obj\Debug\CS.Core.pdb
-D:\Plugg\CS_CSharp\C#\CS.Core\obj\Debug\CS.Core.csprojResolveAssemblyReference.cache

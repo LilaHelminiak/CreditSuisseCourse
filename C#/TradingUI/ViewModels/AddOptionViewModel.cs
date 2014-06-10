@@ -72,7 +72,9 @@ namespace TradingUI.ViewModels
 
             if (correctOption)
             {
-                option = new OptionContract(OptionContract.Type.Put, 1, newOption.Price, newOption.Maturity);
+                OptionContract.Type optionType;
+                Enum.TryParse(newOption.OptionType, out optionType);
+                option = new OptionContract(optionType, 1, newOption.Price, newOption.Maturity);
                 dataReceiver.AddOptionToPricer(option);
                 optionList.Add(newOption);
                 this.Close(obj);
@@ -85,12 +87,12 @@ namespace TradingUI.ViewModels
         {
             if (PutButton)
             {
-                newOption.Type = "Put";
+                newOption.OptionType = "Put";
                 return true;
             }
             else if (CallButton)
             {
-                newOption.Type = "Call";
+                newOption.OptionType = "Call";
                 return true;
             }
             else
@@ -113,8 +115,7 @@ namespace TradingUI.ViewModels
             {
                 try
                 {
-                    newOption.Price = Convert.ToDouble(priceTextbox);
-                    return true;
+                    newOption.Price = Convert.ToDouble(priceTextbox);                    
                 }
                 catch (FormatException)
                 {
@@ -123,6 +124,14 @@ namespace TradingUI.ViewModels
                     return false;
                 }
             }
+            if (newOption.Price < 0)
+            {
+                priceWarningLabel.Visibility = Visibility.Visible;
+                priceWarningLabel.Content = "The price can not be negative";
+                return false;
+            }
+            else
+                return true;
         }
 
         private bool CheckDate(OptionDataGrid newOption)
@@ -149,7 +158,7 @@ namespace TradingUI.ViewModels
         
         private bool CheckExist(OptionDataGrid newOption)
         {
-            var result = optionList.FirstOrDefault(option => option.Type == newOption.Type && option.Price == newOption.Price && option.Maturity == newOption.Maturity);
+            var result = optionList.FirstOrDefault(option => option.OptionType == newOption.OptionType && option.Price == newOption.Price && option.Maturity == newOption.Maturity);
             if (result == null)
                 return true;
             else

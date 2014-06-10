@@ -1,4 +1,5 @@
-﻿<Window x:Class="TradingUI.Views.MainWindow"
+﻿<Window 
+        x:Class="TradingUI.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:basicMvvmQuickstartDesktop="clr-namespace:TradingUI"
@@ -9,7 +10,7 @@
         mc:Ignorable="d"
         Title="Basic MVVM Quickstart"
         Height="700"
-        Width="1200"        
+        Width="1200"   
         prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid x:Name="LayoutRoot">
             <Grid.RowDefinitions>

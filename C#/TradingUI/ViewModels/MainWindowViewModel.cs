@@ -21,10 +21,15 @@ namespace TradingUI.ViewModels
             dataReceiver = new Receiver();
             Task task1 = new Task(new Action(dataReceiver.SubscribeToService));
             task1.Start();
-
+            
             this.MarketViewModel = new MarketViewModel(portfolioData, dataReceiver);
             this.PortfolioViewModel = new PortfolioViewModel();
             this.ChartViewModel = new ChartViewModel();            
+        }
+
+        ~MainWindowViewModel()
+        {
+            dataReceiver.UnsubscribeFromService();
         }
 
         public ChartViewModel ChartViewModel { get; set; }

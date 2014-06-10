@@ -18,6 +18,19 @@ namespace TradingUI.Model
     {
         private PricerContractClient client;
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public List<OptionDataGrid> _optionList;
+        public List<OptionDataGrid> optionList {
+            get
+            {
+                return _optionList;
+            }
+            set
+            {
+                _optionList = value;
+                OnPropertyChanged("optionList");
+            }
+        }
         private MarketData _marketData; 
         public OptionData optionData { get; set; }
         public MarketData MarketData {
@@ -35,6 +48,7 @@ namespace TradingUI.Model
             InstanceContext site = new InstanceContext(null, this);
             client = new PricerContractClient(site);
 
+            this.optionList = new List<OptionDataGrid>() {new OptionDataGrid(){OptionType="Put", Maturity=DateTime.Now, Price=20}};
             //create a unique callback address so multiple clients can run on one machine
             WSDualHttpBinding binding = (WSDualHttpBinding)client.Endpoint.Binding;
             string clientcallbackaddress = binding.ClientBaseAddress.AbsoluteUri;
@@ -64,12 +78,12 @@ namespace TradingUI.Model
 
             //Subscribe.
             Console.WriteLine("Subscribing");
-            client.Subscribe();
-            
+            client.Subscribe();   
+        }
 
-            //Closing the client gracefully closes the connection and cleans up resources
-            //client.Close();
-
+        public void UnsubscribeFromService()
+        {
+            client.Close();
         }
 
         public void AddOptionToPricer(OptionContract option)
@@ -78,11 +92,20 @@ namespace TradingUI.Model
         }
 
 
-
         public void GetPricerData(OptionData newOptionData)
-        {
-            
-            MarketData = (MarketData)newOptionData.MarketData;
+        {            
+            MarketData = newOptionData.MarketData;
+            var tempOptionList = new List<OptionDataGrid>();
+            foreach (var option in newOptionData.OptionResults)
+            {
+                tempOptionList.Add(new OptionDataGrid() 
+                { 
+                    Price = option.Contract.Strike, 
+                    Maturity = option.Contract.Maturity, 
+                    OptionType =  option.Contract.OptionType.ToString()
+                });
+            }
+            optionList = tempOptionList;
         }
     }
 }

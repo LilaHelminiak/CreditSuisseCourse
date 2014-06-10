@@ -15,5 +15,6 @@ namespace TradingUI.Views
         {
             InitializeComponent();
         }
+
     }
 }

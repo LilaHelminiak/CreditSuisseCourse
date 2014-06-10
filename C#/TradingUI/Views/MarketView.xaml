@@ -23,10 +23,10 @@
                     <Button Command="{Binding ConfigureMarketCommand}" Grid.Row="0" Grid.Column="0" Height="25" Width="110" Content="Configure Market" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,25,0,0"></Button>
                 <Image Source="../Images/marketChart.jpg" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,55,0,0"/>
                 <DataGrid Name="optionDataGrid" 
-                          ItemsSource="{Binding optionList}" SelectedItem="{Binding selectedOption}"
+                          ItemsSource="{Binding dataReceiver.optionList}" SelectedItem="{Binding selectedOption}"
                           AutoGenerateColumns="False"  IsReadOnly="True" Grid.Row="1" Margin="10,10,10,10">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Type" Binding="{Binding Type}" Width="25*" />
+                        <DataGridTextColumn Header="Type" Binding="{Binding OptionType}" Width="25*" />
                         <DataGridTextColumn  Header="Maturity" Binding="{Binding Maturity, StringFormat='yyyy-MM-dd'}" Width="25*" />
                         <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="25*" />
                     </DataGrid.Columns>

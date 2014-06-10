@@ -9,6 +9,7 @@ using TradingUI.Model;
 using TradingUI.Views;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
+using System.Threading.Tasks;
 
 namespace TradingUI.ViewModels
 {
@@ -28,14 +29,6 @@ namespace TradingUI.ViewModels
         {
             this.portfolioList = portfolioList;
             optionList = new BindingList<OptionDataGrid>();
-            //test
-            var t = new OptionDataGrid();
-            t.Maturity = DateTime.Parse("2015-09-18");
-            t.Price = 100;
-            t.Type = "Put";
-            optionList.Add(t);
-            //end-test
-            //this.Market = new MarketData();
 
             this.dataReceiver = dataReceiver;
             this.AddOptionCommand = new DelegateCommand<object>(this.ShowAddOptionDialog);

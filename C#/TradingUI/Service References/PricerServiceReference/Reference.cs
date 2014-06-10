@@ -33,16 +33,23 @@ namespace TradingUI.PricerServiceReference {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Pricing.Result))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract.Type))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract[]))]
         void PublishUIData(CS.Pricing.OptionData optionData);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="PricerServiceLibrary/IPricerContract/PublishUIData")]
         System.Threading.Tasks.Task PublishUIDataAsync(CS.Pricing.OptionData optionData);
         
-        [System.ServiceModel.OperationContractAttribute(IsTerminating=true, Action="PricerServiceLibrary/IPricerContract/AddNewOption", ReplyAction="PricerServiceLibrary/IPricerContract/AddNewOptionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="PricerServiceLibrary/IPricerContract/AddNewOption", ReplyAction="PricerServiceLibrary/IPricerContract/AddNewOptionResponse")]
         void AddNewOption(CS.Trades.TradeTypes.OptionContract optionData);
         
-        [System.ServiceModel.OperationContractAttribute(IsTerminating=true, Action="PricerServiceLibrary/IPricerContract/AddNewOption", ReplyAction="PricerServiceLibrary/IPricerContract/AddNewOptionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="PricerServiceLibrary/IPricerContract/AddNewOption", ReplyAction="PricerServiceLibrary/IPricerContract/AddNewOptionResponse")]
         System.Threading.Tasks.Task AddNewOptionAsync(CS.Trades.TradeTypes.OptionContract optionData);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="PricerServiceLibrary/IPricerContract/GetAllOptions", ReplyAction="PricerServiceLibrary/IPricerContract/GetAllOptionsResponse")]
+        CS.Trades.TradeTypes.OptionContract[] GetAllOptions();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="PricerServiceLibrary/IPricerContract/GetAllOptions", ReplyAction="PricerServiceLibrary/IPricerContract/GetAllOptionsResponse")]
+        System.Threading.Tasks.Task<CS.Trades.TradeTypes.OptionContract[]> GetAllOptionsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -54,6 +61,7 @@ namespace TradingUI.PricerServiceReference {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Pricing.Result))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract.Type))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CS.Trades.TradeTypes.OptionContract[]))]
         void GetPricerData(CS.Pricing.OptionData newData);
     }
     
@@ -115,6 +123,14 @@ namespace TradingUI.PricerServiceReference {
         
         public System.Threading.Tasks.Task AddNewOptionAsync(CS.Trades.TradeTypes.OptionContract optionData) {
             return base.Channel.AddNewOptionAsync(optionData);
+        }
+        
+        public CS.Trades.TradeTypes.OptionContract[] GetAllOptions() {
+            return base.Channel.GetAllOptions();
+        }
+        
+        public System.Threading.Tasks.Task<CS.Trades.TradeTypes.OptionContract[]> GetAllOptionsAsync() {
+            return base.Channel.GetAllOptionsAsync();
         }
     }
 }
