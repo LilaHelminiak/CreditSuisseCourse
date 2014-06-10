@@ -18,7 +18,7 @@
 
                 <chartingToolkit:Chart HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <chartingToolkit:LineSeries DependentValuePath="Value" 
-                                                  IndependentValuePath="Key" 
+                                                  IndependentValuePath="Key" FontSize="7"
                                                   ItemsSource="{Binding Path=data}"
                                                   Title="PnL"/>
                 </chartingToolkit:Chart>

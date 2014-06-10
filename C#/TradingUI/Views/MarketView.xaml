@@ -25,7 +25,7 @@
 
                 <chartingToolkit:Chart HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <chartingToolkit:LineSeries DependentValuePath="Value" 
-                                                  IndependentValuePath="Key" 
+                                                  IndependentValuePath="Key" FontSize="12"
                                                   ItemsSource="{Binding Path=dataReceiver.chartData}"
                                                   Title="Stock"/>
                 </chartingToolkit:Chart>

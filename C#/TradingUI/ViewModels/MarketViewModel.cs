@@ -31,7 +31,18 @@ namespace TradingUI.ViewModels
             }
         }
 
-        public OptionDataGrid selectedOption { get; set; }
+        public OptionDataGrid _selectedOption;
+        public OptionDataGrid selectedOption {
+            get { return _selectedOption; }
+            set
+            {
+               _selectedOption= value;
+                OnPropertyChanged("selectedOption");
+                if(value != null)
+                    lastSelectedOption = _selectedOption;
+            }
+        }
+        public OptionDataGrid lastSelectedOption;
         public Receiver dataReceiver { get; set; }
 
         public ICommand AddOptionCommand { get; set; }
@@ -61,11 +72,14 @@ namespace TradingUI.ViewModels
 
         public void ShowTradeOptionDialog(object obj)
         {
-            var newWindow = new TradeOption();
-            var viewModel = new TradeOptionViewModel(portfolioList, selectedOption);
-            viewModel.RequestClose += newWindow.Close;
-            newWindow.DataContext = viewModel;
-            newWindow.Show();
+            if (lastSelectedOption != null)
+            {
+                var newWindow = new TradeOption();
+                var viewModel = new TradeOptionViewModel(portfolioList, lastSelectedOption);
+                viewModel.RequestClose += newWindow.Close;
+                newWindow.DataContext = viewModel;
+                newWindow.Show();
+            }
         }
 
     }

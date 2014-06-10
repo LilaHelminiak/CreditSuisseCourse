@@ -27,6 +27,7 @@
     <SolidColorBrush x:Key="WaitingAnimationColor"
                      Color="DarkBlue" />
 
+   
     <!-- Button -->
     <Style TargetType="Button">
         <Setter Property="Foreground"
